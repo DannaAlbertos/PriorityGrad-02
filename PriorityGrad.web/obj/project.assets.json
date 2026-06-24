@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "PriorityGrad.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/PriorityGrad.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PriorityGrad.domain.dll": {}
+        }
+      },
+      "PriorityGrad.infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "PriorityGrad.domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PriorityGrad.infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PriorityGrad.infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PriorityGrad.domain/1.0.0": {
+      "type": "project",
+      "path": "../PriorityGrad.domain/PriorityGrad.domain.csproj",
+      "msbuildProject": "../PriorityGrad.domain/PriorityGrad.domain.csproj"
+    },
+    "PriorityGrad.infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../PriorityGrad.infrastructure/PriorityGrad.infrastructure.csproj",
+      "msbuildProject": "../PriorityGrad.infrastructure/PriorityGrad.infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "PriorityGrad.domain >= 1.0.0",
+      "PriorityGrad.infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\danna\\.nuget\\packages\\": {},
@@ -39,7 +77,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\PriorityGrad.domain.csproj": {
+              "projectPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\PriorityGrad.domain.csproj"
+            },
+            "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj": {
+              "projectPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

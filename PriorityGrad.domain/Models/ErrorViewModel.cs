@@ -1,4 +1,4 @@
-namespace PriorityGrad.web.Models
+namespace PriorityGrad.domain.Models
 {
     public class ErrorViewModel
     {

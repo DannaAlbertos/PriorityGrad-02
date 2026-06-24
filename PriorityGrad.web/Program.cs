@@ -1,7 +1,11 @@
+using PriorityGrad.domain.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// En Program.cs
+builder.Services.AddScoped<ITareaRepository, PriorityGrad.infrastructure.Repositories.JsonRepository>();
 
 var app = builder.Build();
 

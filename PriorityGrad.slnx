@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="PriorityGrad.domain/PriorityGrad.domain.csproj" Id="5a19c217-8db6-478a-898b-affe73b2d005" />
+  <Project Path="PriorityGrad.infrastructure/PriorityGrad.infrastructure.csproj" Id="574d5841-e358-46c0-9e22-954f3c3afc6e" />
   <Project Path="PriorityGrad.web/PriorityGrad.web.csproj" />
 </Solution>

@@ -1,8 +1,10 @@
-﻿@model PriorityGrad.web.Models.Tarea
+﻿@model PriorityGrad.domain.Models.Tarea
 
 <h2>Crear Tarea</h2>
 
-<form asp-action="Create">
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
     <div class="form-group">
         <label>Materia</label>
         <input asp-for="Materia" class="form-control" />

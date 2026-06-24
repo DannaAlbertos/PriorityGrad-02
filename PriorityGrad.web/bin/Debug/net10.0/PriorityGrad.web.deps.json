@@ -7,14 +7,47 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {
       "PriorityGrad.web/1.0.0": {
+        "dependencies": {
+          "PriorityGrad.domain": "1.0.0",
+          "PriorityGrad.infrastructure": "1.0.0"
+        },
         "runtime": {
           "PriorityGrad.web.dll": {}
+        }
+      },
+      "PriorityGrad.domain/1.0.0": {
+        "runtime": {
+          "PriorityGrad.domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PriorityGrad.infrastructure/1.0.0": {
+        "dependencies": {
+          "PriorityGrad.domain": "1.0.0"
+        },
+        "runtime": {
+          "PriorityGrad.infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "PriorityGrad.web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PriorityGrad.domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PriorityGrad.infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,58 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PriorityGrad.web.Models;
-using System.Collections.Generic;
-using System.Linq;
+using PriorityGrad.domain.Interfaces; // Interfaz en tu dominio
+using PriorityGrad.domain.Models;     // Modelos en tu dominio
 
 namespace PriorityGrad.web.Controllers
 {
     public class TareaController : Controller
     {
-        // Lista estática para simular la base de datos
-        private static List<Tarea> _tareas = new List<Tarea>();
+        // El controlador ahora depende de la INTERFAZ, no de la implementación (JsonRepository)
+        private readonly ITareaRepository _repository;
 
-        // GET: Tarea
+        public TareaController(ITareaRepository repository)
+        {
+            _repository = repository;
+        }
+
         public IActionResult Index(string ordenarPor)
         {
-            // Usamos .ToList() para obtener una copia de la lista en memoria 
-            // y sobre ella aplicar el ordenamiento
-            var listaOrdenada = _tareas.ToList();
+            // 1. Obtener datos a través del puerto
+            var tareas = _repository.ObtenerTodas();
 
-            switch (ordenarPor)
-            {
-                case "valor":
-                    listaOrdenada = listaOrdenada.OrderByDescending(t => t.Valor)
-                                                 .ThenByDescending(t => t.Dificultad)
-                                                 .ToList();
-                    break;
-                case "dificultad":
-                    listaOrdenada = listaOrdenada.OrderByDescending(t => t.Dificultad)
-                                                 .ThenByDescending(t => t.Valor)
-                                                 .ToList();
-                    break;
-                case "fecha":
-                    listaOrdenada = listaOrdenada.OrderBy(t => t.Fecha).ToList();
-                    break;
-                default:
-                    listaOrdenada = listaOrdenada.OrderBy(t => t.Materia).ToList();
-                    break;
-            }
+            // 2. Lógica de ordenamiento (puedes mantenerla aquí o moverla a un "Servicio de Dominio")
+            var listaOrdenada = AplicarOrdenamiento(tareas, ordenarPor);
 
             return View(listaOrdenada);
         }
 
-        // GET: Tarea/Create
-        public IActionResult Create()
+        private List<Tarea> AplicarOrdenamiento(List<Tarea> lista, string criterio)
         {
-            return View();
+            return criterio switch
+            {
+                "valor" => lista.OrderByDescending(t => t.Valor).ThenByDescending(t => t.Dificultad).ToList(),
+                "dificultad" => lista.OrderByDescending(t => t.Dificultad).ThenByDescending(t => t.Valor).ToList(),
+                "fecha" => lista.OrderBy(t => t.Fecha).ToList(),
+                _ => lista.OrderBy(t => t.Materia).ToList()
+            };
         }
 
-        // POST: Tarea/Create
         [HttpPost]
         public IActionResult Create(Tarea nuevaTarea)
         {
             if (ModelState.IsValid)
             {
-                _tareas.Add(nuevaTarea);
+                _repository.Guardar(nuevaTarea); // Persistencia vía puerto
                 return RedirectToAction(nameof(Index));
             }
             return View(nuevaTarea);

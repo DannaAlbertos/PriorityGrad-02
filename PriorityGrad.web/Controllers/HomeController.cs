@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PriorityGrad.web.Models;
+using PriorityGrad.domain.Models;
 using System.Diagnostics;
 
 namespace PriorityGrad.web.Controllers
