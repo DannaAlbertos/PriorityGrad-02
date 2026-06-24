@@ -1,0 +1,25 @@
+﻿@model PriorityGrad.web.Models.Tarea
+
+<h2>Crear Tarea</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Materia</label>
+        <input asp-for="Materia" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Valor</label>
+        <input asp-for="Valor" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Dificultad</label>
+        <input asp-for="Dificultad" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Fecha</label>
+        <input asp-for="Fecha" type="date" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

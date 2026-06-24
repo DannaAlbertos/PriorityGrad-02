@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PriorityGrad.web.Models.Tarea>
+
+<h2>Lista de Tareas</h2>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Tarea</a>
+    
+    <!-- Botones de ordenamiento -->
+    <div class="btn-group ml-2" role="group">
+        <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-outline-primary">Ordenar por Valor</a>
+        <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-outline-primary">Ordenar por Dificultad</a>
+        <a asp-action="Index" asp-route-ordenarPor="fecha" class="btn btn-outline-primary">Ordenar por Fecha</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Materia</th>
+            <th>Valor</th>
+            <th>Dificultad</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Materia</td>
+                <td>@item.Valor</td>
+                <td>@item.Dificultad</td>
+                <td>@item.Fecha</td>
+            </tr>
+        }
+    </tbody>
+</table>
