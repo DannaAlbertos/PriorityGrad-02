@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\controllers\\tareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\controllers\\tareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\tarea\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\tarea\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\tarea\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\tarea\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{011FFEF7-CF64-4E4C-858A-0738C1E5760D}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\controllers\\tareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\controllers\\tareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-24T14:26:49.918Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -46,8 +63,7 @@
               "RelativeToolTip": "PriorityGrad.web\\Views\\Tarea\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-24T13:51:41.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T13:51:41.017Z"
             },
             {
               "$type": "Document",
@@ -57,27 +73,26 @@
               "RelativeDocumentMoniker": "PriorityGrad.web\\Views\\Tarea\\Index.cshtml",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Views\\Tarea\\Index.cshtml",
               "RelativeToolTip": "PriorityGrad.web\\Views\\Tarea\\Index.cshtml",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-24T13:49:13.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "TareaController.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Controllers\\TareaController.cs",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Controllers\\TareaController.cs",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Controllers\\TareaController.cs",
               "RelativeToolTip": "PriorityGrad.web\\Controllers\\TareaController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADwvygAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAIwCgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T13:37:03.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T13:37:03.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Tarea.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Models\\Tarea.cs",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Models\\Tarea.cs",
@@ -85,8 +100,7 @@
               "RelativeToolTip": "PriorityGrad.web\\Models\\Tarea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T13:34:13.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T13:34:13.04Z"
             }
           ]
         }

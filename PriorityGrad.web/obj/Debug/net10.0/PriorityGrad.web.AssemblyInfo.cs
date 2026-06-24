@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PriorityGrad.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7f6789bc13587156d6f3498da0792a3932105fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("PriorityGrad.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PriorityGrad.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
