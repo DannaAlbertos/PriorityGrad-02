@@ -1,8 +1,57 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "PriorityGrad - El Flow de tus Tareas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .hero-container {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        padding: 60px 20px;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .btn-bellako {
+        background: #ff007f;
+        color: white;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 10px 30px;
+        transition: 0.3s;
+    }
+
+        .btn-bellako:hover {
+            background: #d6006a;
+            transform: scale(1.05);
+        }
+</style>
+
+<div class="text-center hero-container shadow-lg">
+    <h1 class="display-3 fw-bold">PriorityGrad</h1>
+    <p class="lead">Organiza tus tareas con el máximo flow y no dejes que el estrés te gane.</p>
+    <hr class="my-4 border-light">
+    <p>¿Listo para romper la liga académica?</p>
+    <a asp-controller="Tarea" asp-action="Index" class="btn btn-bellako btn-lg">
+         Ver mis tareas ahora
+    </a>
+</div>
+
+<div class="row mt-5 text-center">
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h3>Organización</h3>
+            <p>Mantén tus materias bajo control, sin errores y a tiempo.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h3>Prioridad</h3>
+            <p>Dificultad alta, valor alto. ¡Tú decides qué reventar primero!</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h3> Vencidas</h3>
+            <p>No te pierdas de nada, controla las tareas que ya caducaron.</p>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacidad Real";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    .privacy-container {
+        background-color: #f8f9fa;
+        padding: 40px;
+        border-radius: 20px;
+        border-left: 8px solid #ff007f; /* El rosa vibrante del botón */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .text-glow {
+        color: #6a11cb;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+</style>
+
+<div class="privacy-container my-5">
+    <h1 class="text-glow display-5">@ViewData["Title"]</h1>
+    <p class="lead text-muted">Transparencia total para tu tranquilidad académica.</p>
+    
+    <hr class="my-4 border-primary">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <h4 class="text-dark">¿Cómo manejamos tu información?</h4>
+            <p>Aquí no hay trucos. Toda la data de tus tareas vive exclusivamente en tu computadora dentro de un archivo <code>tareas.json</code>. No enviamos tu información a ninguna nube, así que lo que pasa en tu PriorityGrad, se queda en tu equipo.</p>
+
+            <h4 class="text-dark mt-4">Tú tienes el control</h4>
+            <p>Al ser una aplicación que corre localmente, tú eres el dueño absoluto. Si borras la carpeta de tu proyecto o el archivo JSON, la información desaparece para siempre. Sin rastreo, sin publicidad, sin terceros.</p>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card p-4 text-center border-0" style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; border-radius: 15px;">
+                <h5 class="fw-bold">Regla de Oro:</h5>
+                <p>Tu privacidad es sagrada. PriorityGrad está hecho para ayudarte a brillar, no para vigilarte.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-controller="Tarea" asp-action="Index" class="btn btn-outline-dark btn-lg">Volver al Flow</a>
+</div>
