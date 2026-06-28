@@ -1,11 +1,14 @@
 ﻿@model IEnumerable<PriorityGrad.domain.Models.Tarea>
 
+@{
+    ViewData["Title"] = "Lista de Tareas";
+}
+
 <h2>Lista de Tareas</h2>
 
 <div class="mb-3">
     <a asp-action="Create" class="btn btn-primary">Crear Nueva Tarea</a>
     
-    <!-- Botones de ordenamiento -->
     <div class="btn-group ml-2" role="group">
         <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-outline-primary">Ordenar por Valor</a>
         <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-outline-primary">Ordenar por Dificultad</a>
@@ -20,16 +23,33 @@
             <th>Valor</th>
             <th>Dificultad</th>
             <th>Fecha</th>
+            <th>Estado</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
+            // Convertimos la fecha actual a DateOnly para comparar con el modelo
+            var hoy = DateOnly.FromDateTime(DateTime.Now);
+            
+            // Lógica de estado (Asegurando la comparación de tipos DateOnly)
+            string estado = item.Fecha >= hoy.AddDays(1) ? "A tiempo" :
+                            (item.Fecha >= hoy ? "Retrasado" : "Fuera de tiempo");
+            
+            // Definición de clases CSS según estado
+            string claseBadge = estado == "A tiempo" ? "bg-success" :
+                                (estado == "Retrasado" ? "bg-warning" : "bg-danger");
+
             <tr>
                 <td>@item.Materia</td>
                 <td>@item.Valor</td>
                 <td>@item.Dificultad</td>
-                <td>@item.Fecha</td>
+                <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <span class="badge text-white @claseBadge" style="padding: 5px 10px; border-radius: 4px;">
+                        @estado
+                    </span>
+                </td>
             </tr>
         }
     </tbody>
