@@ -1,30 +1,51 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PriorityGrad.domain.Interfaces; // Interfaz en tu dominio
-using PriorityGrad.domain.Models;     // Modelos en tu dominio
+using PriorityGrad.domain.Interfaces;
+using PriorityGrad.domain.Models;
 
 namespace PriorityGrad.web.Controllers
 {
     public class TareaController : Controller
     {
-        // El controlador ahora depende de la INTERFAZ, no de la implementación (JsonRepository)
         private readonly ITareaRepository _repository;
 
+        // Inyección de dependencias a través del constructor
         public TareaController(ITareaRepository repository)
         {
             _repository = repository;
         }
 
+        // GET: /Tarea/Index
         public IActionResult Index(string ordenarPor)
         {
-            // 1. Obtener datos a través del puerto
             var tareas = _repository.ObtenerTodas();
-
-            // 2. Lógica de ordenamiento (puedes mantenerla aquí o moverla a un "Servicio de Dominio")
             var listaOrdenada = AplicarOrdenamiento(tareas, ordenarPor);
-
             return View(listaOrdenada);
         }
 
+        // GET: /Tarea/Create
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: /Tarea/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Tarea nuevaTarea)
+        {
+            // Validamos que el modelo cumpla con las reglas definidas en la clase Tarea
+            if (ModelState.IsValid)
+            {
+                _repository.Guardar(nuevaTarea);
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Si hay errores de validación, devolvemos la vista con los datos actuales
+            return View(nuevaTarea);
+        }
+
+        // Lógica privada para el ordenamiento
         private List<Tarea> AplicarOrdenamiento(List<Tarea> lista, string criterio)
         {
             return criterio switch
@@ -34,17 +55,6 @@ namespace PriorityGrad.web.Controllers
                 "fecha" => lista.OrderBy(t => t.Fecha).ToList(),
                 _ => lista.OrderBy(t => t.Materia).ToList()
             };
-        }
-
-        [HttpPost]
-        public IActionResult Create(Tarea nuevaTarea)
-        {
-            if (ModelState.IsValid)
-            {
-                _repository.Guardar(nuevaTarea); // Persistencia vía puerto
-                return RedirectToAction(nameof(Index));
-            }
-            return View(nuevaTarea);
         }
     }
 }

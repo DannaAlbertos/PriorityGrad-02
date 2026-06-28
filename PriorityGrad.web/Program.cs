@@ -1,33 +1,31 @@
 using PriorityGrad.domain.Interfaces;
+using PriorityGrad.infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registra los servicios de controladores y vistas
 builder.Services.AddControllersWithViews();
-// En Program.cs
-builder.Services.AddScoped<ITareaRepository, PriorityGrad.infrastructure.Repositories.JsonRepository>();
+
+// CONFIGURACIÓN CLAVE (Inyección de dependencias)
+// Conecta la Interfaz (Domain) con la Clase concreta (Infrastructure)
+builder.Services.AddScoped<ITareaRepository, JsonRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Pipeline de configuración
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles(); // Importante para tus archivos CSS/JS
 app.UseRouting();
-
 app.UseAuthorization();
-
-app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

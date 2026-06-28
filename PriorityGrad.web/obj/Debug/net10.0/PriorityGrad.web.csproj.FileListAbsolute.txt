@@ -103,3 +103,4 @@ C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\refi
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\PriorityGrad.web.pdb
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\PriorityGrad.web.genruntimeconfig.cache
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\ref\PriorityGrad.web.dll
+C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\Data\Tareas.json

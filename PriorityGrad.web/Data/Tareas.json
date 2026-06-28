@@ -1,0 +1,20 @@
+﻿[
+  {
+    "Materia": "Arquitectura de software",
+    "Valor": 20,
+    "Dificultad": 5,
+    "Fecha": "2026-06-24"
+  },
+  {
+    "Materia": "Bases de datos",
+    "Valor": 15,
+    "Dificultad": 3,
+    "Fecha": "2026-06-25"
+  },
+  {
+    "Materia": "Cálculo Diferencial",
+    "Valor": 15,
+    "Dificultad": 4,
+    "Fecha": "2026-06-24"
+  }
+]
