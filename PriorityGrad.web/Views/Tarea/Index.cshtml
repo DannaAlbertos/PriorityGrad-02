@@ -13,7 +13,7 @@
     </div>
 
     <div class="mb-4">
-        <span class="text-muted">Ordenar por:</span>
+        <span class="text-light fw-bold me-2">Ordenar por:</span>
         <div class="btn-group">
             <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-sm btn-outline-light">Valor</a>
             <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-sm btn-outline-light">Dificultad</a>
@@ -26,11 +26,12 @@
             <tr> <th>Materia</th> <th>Valor</th> <th>Dificultad</th> <th>Fecha</th> <th>Estado</th> <th>Acción</th> </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Where(t => t.Fecha >= DateOnly.FromDateTime(DateTime.Now)))
             {
                 var hoy = DateOnly.FromDateTime(DateTime.Now);
-                string estado = item.Fecha >= hoy.AddDays(1) ? "A tiempo" : (item.Fecha >= hoy ? "Retrasado" : "Fuera de tiempo");
-                string badgeColor = estado == "A tiempo" ? "success" : (estado == "Retrasado" ? "warning" : "danger");
+                string estado = item.Fecha >= hoy.AddDays(1) ? "A tiempo" : "Retrasado";
+                string badgeColor = estado == "A tiempo" ? "success" : "warning";
+                
                 <tr>
                     <td>@item.Materia</td>
                     <td>@item.Valor</td>
@@ -38,10 +39,13 @@
                     <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
                     <td><span class="badge bg-@badgeColor text-dark">@estado</span></td>
                     <td>
-                        <form asp-action="Eliminar" asp-route-materia="@item.Materia" method="post"
-                              onsubmit="return confirm('¿Segura que quieres eliminar @item.Materia?');">
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
-                        </form>
+                        <div class="d-flex gap-2">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Editar</a>
+                            <form asp-action="Eliminar" asp-route-id="@item.Id" method="post"
+                                  onsubmit="return confirm('¿Segura que quieres eliminar la tarea: @item.Materia?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             }

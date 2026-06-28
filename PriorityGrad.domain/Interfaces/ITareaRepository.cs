@@ -1,4 +1,5 @@
 ﻿using PriorityGrad.domain.Models;
+using System.Collections.Generic;
 
 namespace PriorityGrad.domain.Interfaces
 {
@@ -15,8 +16,13 @@ namespace PriorityGrad.domain.Interfaces
         void Guardar(Tarea tarea);
 
         /// <summary>
-        /// Elimina una tarea basándose en su nombre (Materia).
+        /// Actualiza una tarea existente usando su Id.
         /// </summary>
-        void Eliminar(string materia);
+        void Actualizar(Tarea tarea);
+
+        /// <summary>
+        /// Elimina una tarea basándose en su Id único.
+        /// </summary>
+        void Eliminar(int id);
     }
 }

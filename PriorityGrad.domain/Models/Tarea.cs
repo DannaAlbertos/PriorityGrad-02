@@ -2,12 +2,10 @@
 {
     public class Tarea
     {
+        public int Id { get; set; }
+        public string Materia { get; set; } = string.Empty;
         public int Valor { get; set; }
-
         public int Dificultad { get; set; }
-
-        public string Materia { get; set; }
-
         public DateOnly Fecha { get; set; }
     }
 }

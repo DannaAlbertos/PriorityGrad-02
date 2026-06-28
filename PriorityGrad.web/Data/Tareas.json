@@ -1,32 +1,37 @@
 [
   {
+    "Id": 1,
+    "Materia": "Programaci\u00F3n aplicada",
     "Valor": 20,
+    "Dificultad": 4,
+    "Fecha": "2026-06-26"
+  },
+  {
+    "Id": 2,
+    "Materia": "Programaci\u00F3n aplicada",
+    "Valor": 25,
     "Dificultad": 3,
-    "Materia": "Probabilidad y estad\u00EDstica",
     "Fecha": "2026-06-28"
   },
   {
-    "Valor": 40,
-    "Dificultad": 2,
-    "Materia": "Ingl\u00E9s ",
+    "Id": 3,
+    "Materia": "Bases de datos",
+    "Valor": 10,
+    "Dificultad": 3,
     "Fecha": "2026-06-30"
   },
   {
+    "Id": 4,
+    "Materia": "C\u00E1lculo diferencial",
     "Valor": 15,
-    "Dificultad": 2,
-    "Materia": "Bases de datos",
+    "Dificultad": 5,
     "Fecha": "2026-06-29"
   },
   {
-    "Valor": 20,
-    "Dificultad": 2,
-    "Materia": "Programaci\u00F3n aplicada",
-    "Fecha": "2026-06-23"
-  },
-  {
-    "Valor": 20,
-    "Dificultad": 2,
-    "Materia": "Programaci\u00F3n aplicada",
-    "Fecha": "2026-06-27"
+    "Id": 5,
+    "Materia": "Arquitectura de software",
+    "Valor": 5,
+    "Dificultad": 3,
+    "Fecha": "2026-06-24"
   }
 ]
