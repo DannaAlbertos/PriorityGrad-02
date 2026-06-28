@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{574D5841-E358-46C0-9E22-954F3C3AFC6E}|PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.infrastructure\\repositories\\jsonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{574D5841-E358-46C0-9E22-954F3C3AFC6E}|PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj|solutionrelative:prioritygrad.infrastructure\\repositories\\jsonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|solutionrelative:prioritygrad.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.api\\controllers\\tareascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|solutionrelative:prioritygrad.api\\controllers\\tareascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.api\\prioritygrad.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|solutionrelative:prioritygrad.api\\prioritygrad.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.api\\controllers\\tareascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F71C3A-D829-4046-B326-5197A6270D0D}|PriorityGrad.api\\PriorityGrad.api.csproj|solutionrelative:prioritygrad.api\\controllers\\tareascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\views\\tarea\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|solutionrelative:prioritygrad.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{574D5841-E358-46C0-9E22-954F3C3AFC6E}|PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.infrastructure\\repositories\\jsonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{574D5841-E358-46C0-9E22-954F3C3AFC6E}|PriorityGrad.infrastructure\\PriorityGrad.infrastructure.csproj|solutionrelative:prioritygrad.infrastructure\\repositories\\jsonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6D69136-D926-00A5-12C9-3699574DB510}|PriorityGrad.web\\PriorityGrad.web.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.web\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,38 +99,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TareasController.cs",
-              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Controllers\\TareasController.cs",
-              "RelativeDocumentMoniker": "PriorityGrad.api\\Controllers\\TareasController.cs",
-              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Controllers\\TareasController.cs",
-              "RelativeToolTip": "PriorityGrad.api\\Controllers\\TareasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T14:46:26.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PriorityGrad.api",
-              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\PriorityGrad.api.csproj",
-              "RelativeDocumentMoniker": "PriorityGrad.api\\PriorityGrad.api.csproj",
-              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\PriorityGrad.api.csproj",
-              "RelativeToolTip": "PriorityGrad.api\\PriorityGrad.api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-28T14:45:08.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Program.cs",
               "RelativeDocumentMoniker": "PriorityGrad.api\\Program.cs",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Program.cs",
               "RelativeToolTip": "PriorityGrad.api\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBUAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T14:40:53.843Z",
               "EditorCaption": ""
@@ -150,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Program.cs",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Program.cs",
@@ -163,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Views\\Tarea\\Create.cshtml",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Views\\Tarea\\Create.cshtml",
@@ -176,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Views\\Shared\\_Layout.cshtml",
@@ -202,15 +176,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "JsonRepository.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.infrastructure\\Repositories\\JsonRepository.cs",
               "RelativeDocumentMoniker": "PriorityGrad.infrastructure\\Repositories\\JsonRepository.cs",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.infrastructure\\Repositories\\JsonRepository.cs",
               "RelativeToolTip": "PriorityGrad.infrastructure\\Repositories\\JsonRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAYwCwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwEEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-24T14:34:54.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PriorityGrad.api",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\PriorityGrad.api.csproj",
+              "RelativeDocumentMoniker": "PriorityGrad.api\\PriorityGrad.api.csproj",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\PriorityGrad.api.csproj",
+              "RelativeToolTip": "PriorityGrad.api\\PriorityGrad.api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-28T14:45:08.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TareasController.cs",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Controllers\\TareasController.cs",
+              "RelativeDocumentMoniker": "PriorityGrad.api\\Controllers\\TareasController.cs",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Controllers\\TareasController.cs",
+              "RelativeToolTip": "PriorityGrad.api\\Controllers\\TareasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:46:26.977Z",
               "EditorCaption": ""
             },
             {
@@ -228,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "TareaController.cs",
               "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.web\\Controllers\\TareaController.cs",
               "RelativeDocumentMoniker": "PriorityGrad.web\\Controllers\\TareaController.cs",

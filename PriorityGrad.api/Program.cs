@@ -3,20 +3,20 @@ using PriorityGrad.infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Servicios
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ITareaRepository, JsonRepository>();
+// CONFIGURACIÓN DE RUTA: 
+// Pasamos explícitamente la ruta de la carpeta Data de tu proyecto web
+string pathWeb = @"C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\Data";
+
+builder.Services.AddScoped<ITareaRepository>(sp => new JsonRepository(pathWeb));
 
 var app = builder.Build();
 
-// 2. Middleware - ¡Aquí faltaban las líneas de Swagger!
-app.UseSwagger();           // Genera el archivo JSON de la especificación
-app.UseSwaggerUI();         // Habilita la interfaz visual en /swagger
-
-// app.UseHttpsRedirection(); // Comentada temporalmente para evitar el error de puerto
+app.UseSwagger();
+app.UseSwaggerUI();
 app.MapControllers();
 
 app.Run();

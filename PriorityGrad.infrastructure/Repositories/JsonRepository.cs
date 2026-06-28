@@ -9,17 +9,31 @@ namespace PriorityGrad.infrastructure.Repositories
     {
         private readonly string _filePath;
 
-        public JsonRepository()
+        // Constructor con soporte para ruta personalizada
+        public JsonRepository(string? dataPath = null)
         {
-            // AppDomain.CurrentDomain.BaseDirectory apunta a la carpeta donde corre la app (ej. bin/Debug/net...)
-            // 'Data' es la carpeta donde colocaste tu archivo json
-            _filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "tareas.json");
+            if (string.IsNullOrEmpty(dataPath))
+            {
+                // Ruta por defecto si no se pasa nada
+                _filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "tareas.json");
+            }
+            else
+            {
+                // Ruta personalizada pasada desde el Program.cs
+                _filePath = Path.Combine(dataPath, "tareas.json");
+            }
 
-            // Aseguramos que la carpeta Data exista para evitar errores
-            string directory = Path.GetDirectoryName(_filePath);
-            if (!Directory.Exists(directory))
+            // Aseguramos que la carpeta exista
+            string? directory = Path.GetDirectoryName(_filePath);
+            if (directory != null && !Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
+            }
+
+            // Si el archivo no existe, lo inicializamos vacío
+            if (!File.Exists(_filePath))
+            {
+                File.WriteAllText(_filePath, "[]");
             }
         }
 
@@ -27,8 +41,15 @@ namespace PriorityGrad.infrastructure.Repositories
         {
             if (!File.Exists(_filePath)) return new List<Tarea>();
 
-            string json = File.ReadAllText(_filePath);
-            return JsonSerializer.Deserialize<List<Tarea>>(json) ?? new List<Tarea>();
+            try
+            {
+                string json = File.ReadAllText(_filePath);
+                return JsonSerializer.Deserialize<List<Tarea>>(json) ?? new List<Tarea>();
+            }
+            catch
+            {
+                return new List<Tarea>();
+            }
         }
 
         public void Guardar(Tarea tarea)
@@ -36,8 +57,8 @@ namespace PriorityGrad.infrastructure.Repositories
             var tareas = ObtenerTodas();
             tareas.Add(tarea);
 
-            // Serializamos la lista completa. WriteIndented = true hace que el JSON sea legible.
-            string json = JsonSerializer.Serialize(tareas, new JsonSerializerOptions { WriteIndented = true });
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(tareas, options);
 
             File.WriteAllText(_filePath, json);
         }
