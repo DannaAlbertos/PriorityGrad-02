@@ -1,37 +1,26 @@
 [
   {
-    "Id": 1,
-    "Materia": "Programaci\u00F3n aplicada",
-    "Valor": 20,
-    "Dificultad": 4,
-    "Fecha": "2026-06-26"
-  },
-  {
     "Id": 2,
-    "Materia": "Programaci\u00F3n aplicada",
-    "Valor": 25,
-    "Dificultad": 3,
-    "Fecha": "2026-06-28"
-  },
-  {
-    "Id": 3,
-    "Materia": "Bases de datos",
-    "Valor": 10,
-    "Dificultad": 3,
-    "Fecha": "2026-06-30"
-  },
-  {
-    "Id": 4,
+    "Titulo": "Derivadas avanzadas",
     "Materia": "C\u00E1lculo diferencial",
     "Valor": 15,
     "Dificultad": 5,
     "Fecha": "2026-06-29"
   },
   {
-    "Id": 5,
-    "Materia": "Arquitectura de software",
-    "Valor": 5,
+    "Id": 3,
+    "Titulo": "Passive voice",
+    "Materia": "Ingl\u00E9s",
+    "Valor": 20,
     "Dificultad": 3,
-    "Fecha": "2026-06-24"
+    "Fecha": "2026-06-28"
+  },
+  {
+    "Id": 4,
+    "Titulo": "Algebra relacional",
+    "Materia": "Bases de datos",
+    "Valor": 5,
+    "Dificultad": 2,
+    "Fecha": "2026-06-26"
   }
 ]

@@ -1,33 +1,28 @@
 ﻿@model PriorityGrad.domain.Models.Tarea
-
-@{
-    ViewData["Title"] = "Nueva Tarea";
-}
-
-<div class="row justify-content-center">
-    <div class="col-md-6 glass-box">
-        <h2 class="text-center mb-4">Nueva Tarea</h2>
-        <form asp-action="Create">
-            <div class="mb-3">
-                <label class="form-label">Materia</label>
-                <input asp-for="Materia" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Valor</label>
-                <input asp-for="Valor" class="form-control" />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Dificultad</label>
-                <input asp-for="Dificultad" class="form-control" />
-            </div>
-            <div class="mb-4">
-                <label class="form-label">Fecha</label>
-                <input asp-for="Fecha" type="date" class="form-control" />
-            </div>
-            <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-neon">Guardar Tarea</button>
-                <a asp-action="Index" class="btn btn-outline-light rounded-pill">Cancelar</a>
-            </div>
-        </form>
-    </div>
+<div class="glass-box">
+    <h2>Nueva Tarea</h2>
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label class="form-label">Título</label>
+            <input asp-for="Titulo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Materia</label>
+            <input asp-for="Materia" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Valor</label>
+            <input asp-for="Valor" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Dificultad</label>
+            <input asp-for="Dificultad" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input asp-for="Fecha" type="date" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
 </div>
