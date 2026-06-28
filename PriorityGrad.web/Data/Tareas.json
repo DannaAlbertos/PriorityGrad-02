@@ -16,5 +16,17 @@
     "Dificultad": 2,
     "Materia": "Bases de datos",
     "Fecha": "2026-06-29"
+  },
+  {
+    "Valor": 20,
+    "Dificultad": 2,
+    "Materia": "Programaci\u00F3n aplicada",
+    "Fecha": "2026-06-23"
+  },
+  {
+    "Valor": 20,
+    "Dificultad": 2,
+    "Materia": "Programaci\u00F3n aplicada",
+    "Fecha": "2026-06-27"
   }
 ]
