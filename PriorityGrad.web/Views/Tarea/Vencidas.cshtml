@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PriorityGrad.domain.Models.Tarea>
+
+<h2>Tareas Vencidas (Más de 2 días)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Materia</th>
+            <th>Fecha</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Materia</td>
+                <td>@item.Fecha</td>
+                <td>
+                    <form asp-action="Eliminar" method="post" onsubmit="return confirm('¿Estás seguro de eliminar esta tarea?');">
+                        <input type="hidden" name="materia" value="@item.Materia" />
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index" class="btn btn-primary">Volver a la Lista</a>

@@ -9,28 +9,19 @@ namespace PriorityGrad.infrastructure.Repositories
     {
         private readonly string _filePath;
 
-        // Constructor con soporte para ruta personalizada
-        public JsonRepository(string? dataPath = null)
+        public JsonRepository()
         {
-            if (string.IsNullOrEmpty(dataPath))
+            // Apunta a la carpeta 'Data' en la raíz del proyecto web
+            string baseDir = Directory.GetCurrentDirectory();
+            string dataFolder = Path.Combine(baseDir, "Data");
+
+            if (!Directory.Exists(dataFolder))
             {
-                // Ruta por defecto si no se pasa nada
-                _filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "tareas.json");
-            }
-            else
-            {
-                // Ruta personalizada pasada desde el Program.cs
-                _filePath = Path.Combine(dataPath, "tareas.json");
+                Directory.CreateDirectory(dataFolder);
             }
 
-            // Aseguramos que la carpeta exista
-            string? directory = Path.GetDirectoryName(_filePath);
-            if (directory != null && !Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
+            _filePath = Path.Combine(dataFolder, "tareas.json");
 
-            // Si el archivo no existe, lo inicializamos vacío
             if (!File.Exists(_filePath))
             {
                 File.WriteAllText(_filePath, "[]");
@@ -56,10 +47,27 @@ namespace PriorityGrad.infrastructure.Repositories
         {
             var tareas = ObtenerTodas();
             tareas.Add(tarea);
+            SalvarEnArchivo(tareas);
+        }
 
+        // NUEVO: Implementación del método Eliminar
+        public void Eliminar(string materia)
+        {
+            var tareas = ObtenerTodas();
+            var tareaAEliminar = tareas.FirstOrDefault(t => t.Materia == materia);
+
+            if (tareaAEliminar != null)
+            {
+                tareas.Remove(tareaAEliminar);
+                SalvarEnArchivo(tareas);
+            }
+        }
+
+        // Método privado auxiliar para evitar repetir el código de serialización
+        private void SalvarEnArchivo(List<Tarea> tareas)
+        {
             var options = new JsonSerializerOptions { WriteIndented = true };
             string json = JsonSerializer.Serialize(tareas, options);
-
             File.WriteAllText(_filePath, json);
         }
     }

@@ -8,13 +8,11 @@ namespace PriorityGrad.web.Controllers
     {
         private readonly ITareaRepository _repository;
 
-        // Inyección de dependencias a través del constructor
         public TareaController(ITareaRepository repository)
         {
             _repository = repository;
         }
 
-        // GET: /Tarea/Index
         public IActionResult Index(string ordenarPor)
         {
             var tareas = _repository.ObtenerTodas();
@@ -22,32 +20,49 @@ namespace PriorityGrad.web.Controllers
             return View(listaOrdenada);
         }
 
-        // GET: /Tarea/Create
+        // NUEVO: Vista de Tareas Vencidas
+        public IActionResult Vencidas()
+        {
+            var hoy = DateOnly.FromDateTime(DateTime.Now);
+            // Filtramos tareas cuya fecha sea menor o igual al día de ayer
+            var tareasVencidas = _repository.ObtenerTodas()
+                                            .Where(t => t.Fecha <= hoy.AddDays(-1))
+                                            .ToList();
+            return View(tareasVencidas);
+        }
+
+        // NUEVO: Acción para eliminar (llamada desde el formulario en la vista)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Eliminar(string materia)
+        {
+            _repository.Eliminar(materia);
+            return RedirectToAction(nameof(Vencidas));
+        }
+
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: /Tarea/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Tarea nuevaTarea)
         {
-            // Validamos que el modelo cumpla con las reglas definidas en la clase Tarea
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _repository.Guardar(nuevaTarea);
-                return RedirectToAction(nameof(Index));
+                return View(nuevaTarea);
             }
 
-            // Si hay errores de validación, devolvemos la vista con los datos actuales
-            return View(nuevaTarea);
+            _repository.Guardar(nuevaTarea);
+            return RedirectToAction(nameof(Index));
         }
 
-        // Lógica privada para el ordenamiento
         private List<Tarea> AplicarOrdenamiento(List<Tarea> lista, string criterio)
         {
+            if (lista == null) return new List<Tarea>();
+
             return criterio switch
             {
                 "valor" => lista.OrderByDescending(t => t.Valor).ThenByDescending(t => t.Dificultad).ToList(),

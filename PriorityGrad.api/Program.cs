@@ -11,7 +11,9 @@ builder.Services.AddSwaggerGen();
 // Pasamos explícitamente la ruta de la carpeta Data de tu proyecto web
 string pathWeb = @"C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\Data";
 
-builder.Services.AddScoped<ITareaRepository>(sp => new JsonRepository(pathWeb));
+//builder.Services.AddScoped<ITareaRepository>(sp => new JsonRepository(pathWeb));
+// Cambia la línea 14 de tu Program.cs en el proyecto API por esta:
+builder.Services.AddScoped<ITareaRepository, JsonRepository>();
 
 var app = builder.Build();
 

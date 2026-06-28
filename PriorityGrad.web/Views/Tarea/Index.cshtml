@@ -6,10 +6,8 @@
 
 <h2>Lista de Tareas</h2>
 
-<div class="mb-3">
-    <a asp-action="Create" class="btn btn-primary">Crear Nueva Tarea</a>
-    
-    <div class="btn-group ml-2" role="group">
+<div class="mb-4">
+    <div class="btn-group" role="group">
         <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-outline-primary">Ordenar por Valor</a>
         <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-outline-primary">Ordenar por Dificultad</a>
         <a asp-action="Index" asp-route-ordenarPor="fecha" class="btn btn-outline-primary">Ordenar por Fecha</a>
@@ -29,14 +27,11 @@
     <tbody>
         @foreach (var item in Model)
         {
-            // Convertimos la fecha actual a DateOnly para comparar con el modelo
             var hoy = DateOnly.FromDateTime(DateTime.Now);
             
-            // Lógica de estado (Asegurando la comparación de tipos DateOnly)
             string estado = item.Fecha >= hoy.AddDays(1) ? "A tiempo" :
                             (item.Fecha >= hoy ? "Retrasado" : "Fuera de tiempo");
             
-            // Definición de clases CSS según estado
             string claseBadge = estado == "A tiempo" ? "bg-success" :
                                 (estado == "Retrasado" ? "bg-warning" : "bg-danger");
 
@@ -54,3 +49,8 @@
         }
     </tbody>
 </table>
+
+<div class="mt-3">
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Tarea</a>
+    <a asp-action="Vencidas" class="btn btn-warning">Ver Tareas Vencidas</a>
+</div>

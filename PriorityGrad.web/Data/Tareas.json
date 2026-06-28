@@ -1,20 +1,20 @@
-﻿[
+[
   {
-    "Materia": "Arquitectura de software",
     "Valor": 20,
-    "Dificultad": 5,
-    "Fecha": "2026-06-24"
-  },
-  {
-    "Materia": "Bases de datos",
-    "Valor": 15,
     "Dificultad": 3,
-    "Fecha": "2026-06-25"
+    "Materia": "Probabilidad y estad\u00EDstica",
+    "Fecha": "2026-06-28"
   },
   {
-    "Materia": "Cálculo Diferencial",
+    "Valor": 40,
+    "Dificultad": 2,
+    "Materia": "Ingl\u00E9s ",
+    "Fecha": "2026-06-30"
+  },
+  {
     "Valor": 15,
-    "Dificultad": 4,
-    "Fecha": "2026-06-24"
+    "Dificultad": 2,
+    "Materia": "Bases de datos",
+    "Fecha": "2026-06-29"
   }
 ]
