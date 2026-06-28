@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -109,18 +109,10 @@
               "RelativeDocumentMoniker": "PriorityGrad.api\\PriorityGrad.api.csproj",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\PriorityGrad.api.csproj",
               "RelativeToolTip": "PriorityGrad.api\\PriorityGrad.api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-06-28T14:45:08.669Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -130,7 +122,7 @@
               "RelativeDocumentMoniker": "PriorityGrad.api\\Program.cs",
               "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.api\\Program.cs",
               "RelativeToolTip": "PriorityGrad.api\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T14:40:53.843Z",
               "EditorCaption": ""

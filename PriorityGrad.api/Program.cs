@@ -3,23 +3,20 @@ using PriorityGrad.infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Agregar servicios al contenedor
+// 1. Servicios
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); // Recomendado para probar tus endpoints
+builder.Services.AddSwaggerGen();
 
-// Registro de dependencia
 builder.Services.AddScoped<ITareaRepository, JsonRepository>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// 2. Middleware - ¡Aquí faltaban las líneas de Swagger!
+app.UseSwagger();           // Genera el archivo JSON de la especificación
+app.UseSwaggerUI();         // Habilita la interfaz visual en /swagger
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); // Comentada temporalmente para evitar el error de puerto
 app.MapControllers();
 
 app.Run();
