@@ -1,5 +1,6 @@
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\appsettings.json
+C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\Data\Tareas.json
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\PriorityGrad.web.staticwebassets.runtime.json
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\PriorityGrad.web.staticwebassets.endpoints.json
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\PriorityGrad.web.exe
@@ -103,4 +104,3 @@ C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\refi
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\PriorityGrad.web.pdb
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\PriorityGrad.web.genruntimeconfig.cache
 C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\obj\Debug\net10.0\ref\PriorityGrad.web.dll
-C:\Users\danna\source\repos\PriorityGrad\PriorityGrad.web\bin\Debug\net10.0\Data\Tareas.json
