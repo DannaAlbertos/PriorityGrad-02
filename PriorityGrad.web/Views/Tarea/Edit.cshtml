@@ -1,8 +1,16 @@
 ﻿@model PriorityGrad.domain.Models.Tarea
+@{
+    ViewData["Title"] = "Editar Tarea";
+}
+
 <div class="glass-box">
     <h2>Editar Tarea</h2>
     <form asp-action="Edit" method="post">
+        <!-- Input oculto para que el controller sepa a dónde regresar al guardar -->
+        <input type="hidden" name="returnUrl" value="@Context.Request.Query["returnUrl"]" />
+        
         <input type="hidden" asp-for="Id" />
+        
         <div class="mb-3">
             <label class="form-label">Título</label>
             <input asp-for="Titulo" class="form-control" />
@@ -23,7 +31,13 @@
             <label class="form-label">Fecha</label>
             <input asp-for="Fecha" type="date" class="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            
+            <!-- Botón Cancelar dinámico -->
+            <a href="@(Context.Request.Query["returnUrl"].ToString() ?? Url.Action("Index"))"
+               class="btn btn-secondary">Cancelar</a>
+        </div>
     </form>
 </div>

@@ -5,22 +5,30 @@
     "Materia": "C\u00E1lculo diferencial",
     "Valor": 15,
     "Dificultad": 5,
-    "Fecha": "2026-06-29"
-  },
-  {
-    "Id": 3,
-    "Titulo": "Passive voice",
-    "Materia": "Ingl\u00E9s",
-    "Valor": 20,
-    "Dificultad": 3,
     "Fecha": "2026-06-28"
   },
   {
-    "Id": 4,
+    "Id": 8,
     "Titulo": "Algebra relacional",
     "Materia": "Bases de datos",
-    "Valor": 5,
+    "Valor": 35,
     "Dificultad": 2,
-    "Fecha": "2026-06-26"
+    "Fecha": "2026-07-08"
+  },
+  {
+    "Id": 9,
+    "Titulo": "Derivadas pt2",
+    "Materia": "C\u00E1lculo diferencial",
+    "Valor": 40,
+    "Dificultad": 5,
+    "Fecha": "2026-07-02"
+  },
+  {
+    "Id": 10,
+    "Titulo": "Derivadas pt2",
+    "Materia": "C\u00E1lculo diferencial",
+    "Valor": 5,
+    "Dificultad": 1,
+    "Fecha": "2026-06-29"
   }
 ]

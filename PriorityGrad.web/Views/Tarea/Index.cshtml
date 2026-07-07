@@ -1,35 +1,57 @@
 ﻿@model IEnumerable<PriorityGrad.domain.Models.Tarea>
+@{ ViewData["Title"] = "Mis Tareas"; }
+
+<style>
+    .table-container { border-collapse: separate; border-spacing: 0 12px; }
+    .table-container tbody tr { background-color: rgba(255, 255, 255, 0.05); transition: 0.3s; }
+    .table-container tbody tr:hover { background-color: rgba(255, 255, 255, 0.1); }
+    .table-container td, .table-container th { padding: 18px !important; border: none; }
+    .table-container tbody tr td:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+    .table-container tbody tr td:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+</style>
+
 <div class="glass-box">
-    <div class="d-flex justify-content-between mb-4">
-        <h2>Dashboard</h2>
-        <div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Dashboard de Tareas</h2>
+        <div class="d-flex gap-2">
             <a asp-action="Create" class="btn btn-neon">➕ Nueva</a>
             <a asp-action="Vencidas" class="btn btn-outline-warning">⚠️ Vencidas</a>
         </div>
     </div>
-    <div class="mb-3">
-        <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-sm btn-outline-light">Valor</a>
-        <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-sm btn-outline-light">Dificultad</a>
-        <a asp-action="Index" asp-route-ordenarPor="fecha" class="btn btn-sm btn-outline-light">Fecha</a>
+
+    <div class="mb-4">
+        <span class="text-light fw-bold me-2">Ordenar por:</span>
+        <div class="btn-group">
+            <a asp-action="Index" asp-route-ordenarPor="valor" class="btn btn-sm btn-outline-light">Valor</a>
+            <a asp-action="Index" asp-route-ordenarPor="dificultad" class="btn btn-sm btn-outline-light">Dificultad</a>
+            <a asp-action="Index" asp-route-ordenarPor="fecha" class="btn btn-sm btn-outline-light">Fecha</a>
+        </div>
     </div>
-    <table class="table table-dark table-hover">
+
+    <table class="table table-dark table-hover align-middle table-container">
         <thead>
-            <tr><th>Título</th><th>Materia</th><th>Valor</th><th>Dificultad</th><th>Fecha</th><th>Acción</th></tr>
+            <tr> <th>Título</th> <th>Materia</th> <th>Valor</th> <th>Dificultad</th> <th>Fecha</th> <th>Estado</th> <th>Acción</th> </tr>
         </thead>
         <tbody>
             @foreach (var item in Model.Where(t => t.Fecha >= DateOnly.FromDateTime(DateTime.Now)))
             {
+                var hoy = DateOnly.FromDateTime(DateTime.Now);
+                string estado = item.Fecha >= hoy.AddDays(1) ? "A tiempo" : "Retrasado";
+                string badgeColor = estado == "A tiempo" ? "success" : "warning";
                 <tr>
                     <td>@item.Titulo</td>
                     <td>@item.Materia</td>
                     <td>@item.Valor</td>
                     <td>@item.Dificultad</td>
                     <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td><span class="badge bg-@badgeColor text-dark">@estado</span></td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Editar</a>
-                        <form asp-action="Eliminar" asp-route-id="@item.Id" method="post" onsubmit="return confirm('¿Eliminar @item.Titulo?');" style="display:inline;">
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
-                        </form>
+                        <div class="d-flex gap-2">
+                            <a asp-action="Edit" asp-route-id="@item.Id" asp-route-returnUrl="@Context.Request.Path" class="btn btn-sm btn-outline-info">Editar</a>
+                            <form asp-action="Eliminar" asp-route-id="@item.Id" asp-route-returnUrl="@Context.Request.Path" method="post" onsubmit="return confirm('¿Segura que quieres eliminar @item.Titulo?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             }

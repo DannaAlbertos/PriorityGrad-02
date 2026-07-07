@@ -17,7 +17,6 @@ namespace PriorityGrad.web.Controllers
         public IActionResult Vencidas()
         {
             var hoy = DateOnly.FromDateTime(DateTime.Now);
-            // Captura todo lo que sea menor al día de hoy
             return View(_repository.ObtenerTodas().Where(t => t.Fecha < hoy).ToList());
         }
 
@@ -53,12 +52,19 @@ namespace PriorityGrad.web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // --- MÉTODO CORREGIDO ---
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Eliminar(int id)
+        public IActionResult Eliminar(int id, string? returnUrl)
         {
             _repository.Eliminar(id);
-            return RedirectToAction(nameof(Vencidas));
+
+            // Si nos pasaron una URL de retorno, regresamos a ella
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
+
+            // Si no, por defecto vamos al Dashboard
+            return RedirectToAction(nameof(Index));
         }
 
         private List<Tarea> AplicarOrdenamiento(List<Tarea> lista, string criterio) => criterio switch
