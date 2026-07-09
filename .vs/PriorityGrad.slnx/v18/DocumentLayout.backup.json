@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF7DDD25-E1C2-4438-9213-6EE16430DA41}|NewFolder1{AF7DDD25-E1C2-4438-9213-6EE16430DA41}|C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama1.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{AF7DDD25-E1C2-4438-9213-6EE16430DA41}|NewFolder1{AF7DDD25-E1C2-4438-9213-6EE16430DA41}|solutionrelative:Diagrama1.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|solutionrelative:Diagrama2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Diagrama1.md",
-              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama1.md",
-              "RelativeDocumentMoniker": "Diagrama1.md",
-              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama1.md",
-              "RelativeToolTip": "Diagrama1.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAADAAAAAAAAAA==",
+              "Title": "Diagrama2.md",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md",
+              "RelativeDocumentMoniker": "Diagrama2.md",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md",
+              "RelativeToolTip": "Diagrama2.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-07-08T20:43:22.916Z",
+              "WhenOpened": "2026-07-09T03:02:43.064Z",
               "EditorCaption": ""
             }
           ]
