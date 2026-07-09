@@ -2,6 +2,7 @@
   <Folder Name="/ADR/" />
   <Folder Name="/Diagramas/">
     <File Path="Diagrama1.md" />
+    <File Path="Diagrama2.md" />
   </Folder>
   <Project Path="PriorityGrad.api/PriorityGrad.api.csproj" Id="15f71c3a-d829-4046-b326-5197a6270d0d" />
   <Project Path="PriorityGrad.domain/PriorityGrad.domain.csproj" Id="5a19c217-8db6-478a-898b-affe73b2d005" />
