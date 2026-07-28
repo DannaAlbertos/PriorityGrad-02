@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama3.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|solutionrelative:Diagrama3.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{330BCD06-98FA-28B5-C9E5-A6B8EAC663E6}|PriorityGrad.domain\\PriorityGrad.domain.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.domain\\interfaces\\itarearepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330BCD06-98FA-28B5-C9E5-A6B8EAC663E6}|PriorityGrad.domain\\PriorityGrad.domain.csproj|solutionrelative:prioritygrad.domain\\interfaces\\itarearepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|Diagramas{879501FF-0256-E2EE-3AB1-8DBE7B2A3940}|solutionrelative:Diagrama2.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{330BCD06-98FA-28B5-C9E5-A6B8EAC663E6}|PriorityGrad.domain\\PriorityGrad.domain.csproj|c:\\users\\danna\\source\\repos\\prioritygrad\\prioritygrad.domain\\prioritygrad.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{330BCD06-98FA-28B5-C9E5-A6B8EAC663E6}|PriorityGrad.domain\\PriorityGrad.domain.csproj|solutionrelative:prioritygrad.domain\\prioritygrad.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +35,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Diagrama3.md",
-              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama3.md",
-              "RelativeDocumentMoniker": "Diagrama3.md",
-              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama3.md",
-              "RelativeToolTip": "Diagrama3.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-07-09T03:06:14.193Z",
+              "Title": "ITareaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\Interfaces\\ITareaRepository.cs",
+              "RelativeDocumentMoniker": "PriorityGrad.domain\\Interfaces\\ITareaRepository.cs",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\Interfaces\\ITareaRepository.cs",
+              "RelativeToolTip": "PriorityGrad.domain\\Interfaces\\ITareaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T18:11:58.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Diagrama2.md",
-              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md",
-              "RelativeDocumentMoniker": "Diagrama2.md",
-              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\Diagrama2.md",
-              "RelativeToolTip": "Diagrama2.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-07-09T03:02:43.064Z",
+              "Title": "PriorityGrad.domain",
+              "DocumentMoniker": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\PriorityGrad.domain.csproj",
+              "RelativeDocumentMoniker": "PriorityGrad.domain\\PriorityGrad.domain.csproj",
+              "ToolTip": "C:\\Users\\danna\\source\\repos\\PriorityGrad\\PriorityGrad.domain\\PriorityGrad.domain.csproj",
+              "RelativeToolTip": "PriorityGrad.domain\\PriorityGrad.domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-28T18:11:53.937Z",
               "EditorCaption": ""
             }
           ]
