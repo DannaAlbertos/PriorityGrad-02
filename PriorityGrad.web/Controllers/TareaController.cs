@@ -20,6 +20,14 @@ namespace PriorityGrad.web.Controllers
             return View(_repository.ObtenerTodas().Where(t => t.Fecha < hoy).ToList());
         }
 
+        // --- MÉTODO DETAILS AGREGADO ---
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var tarea = _repository.ObtenerTodas().FirstOrDefault(t => t.Id == id);
+            return tarea == null ? NotFound() : View(tarea);
+        }
+
         [HttpGet]
         public IActionResult Create() => View();
 
@@ -52,18 +60,15 @@ namespace PriorityGrad.web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // --- MÉTODO CORREGIDO ---
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Eliminar(int id, string? returnUrl)
         {
             _repository.Eliminar(id);
 
-            // Si nos pasaron una URL de retorno, regresamos a ella
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
 
-            // Si no, por defecto vamos al Dashboard
             return RedirectToAction(nameof(Index));
         }
 

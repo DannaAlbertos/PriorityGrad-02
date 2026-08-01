@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PriorityGrad.domain.Models.Tarea>
 @{ 
     ViewData["Title"] = "Mis Tareas"; 
-    // Declarar la fecha de hoy una sola vez fuera del bucle
+    // Declarar la fecha de hoy una sola vez fuera del bucle    
     var hoy = DateOnly.FromDateTime(DateTime.Now);
 }
 
@@ -53,16 +53,17 @@
                 <tr>
                     <td>
                         @item.Titulo
-                        <!-- Aquí agregamos la burbuja (tooltip) -->
+                        <!-- Enlace interactivo con tooltip que redirige a la vista Details -->
                         @if (!string.IsNullOrEmpty(item.Comentario))
                         {
-                            <span class="ms-2" 
-                                  data-bs-toggle="tooltip" 
-                                  data-bs-placement="top" 
-                                  title="@item.Comentario" 
-                                  style="cursor: help; color: #d4a5a5; font-size: 1.1em;">
+                            <a asp-action="Details" asp-route-id="@item.Id" 
+                               class="ms-2 text-decoration-none" 
+                               data-bs-toggle="tooltip" 
+                               data-bs-placement="top" 
+                               title="@item.Comentario (Clic para ver detalles)" 
+                               style="cursor: pointer; color: #d4a5a5; font-size: 1.1em;">
                                 📝
-                            </span>
+                            </a>
                         }
                     </td>
                     <td>@item.Materia</td>

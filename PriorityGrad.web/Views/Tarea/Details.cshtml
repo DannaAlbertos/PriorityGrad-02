@@ -1,0 +1,68 @@
+﻿@model PriorityGrad.domain.Models.Tarea
+@{
+    ViewData["Title"] = "Detalles de la Tarea";
+    // Extraemos el día de la semana en español o formato local
+    string diaSemana = Model.Fecha.ToString("dddd").ToUpper();
+}
+
+<div class="glass-box p-5">
+    <div class="d-flex justify-content-between align-items-start mb-4">
+        <div>
+            <h1 class="mb-1 text-info">@Model.Titulo</h1>
+            <h4 class="text-light opacity-75">@Model.Materia</h4>
+        </div>
+        <div class="text-end">
+            <!-- Muestra la fecha con el día de la semana y la hora si existe -->
+            <h4 class="text-warning mb-0">📅 @diaSemana, @Model.Fecha.ToString("dd/MM/yyyy")</h4>
+            @if (Model.HoraEntrega.HasValue)
+            {
+                <h5 class="text-light mt-1">⏰ Hora límite: @Model.HoraEntrega.Value.ToString("HH:mm")</h5>
+            }
+        </div>
+    </div>
+
+    <hr class="border-secondary mb-4" />
+
+    <div class="row">
+        <!-- Columna Izquierda: Datos del profesor y Stats -->
+        <div class="col-md-4">
+            <div class="p-3 rounded" style="background: rgba(0,0,0,0.2);">
+                <h5 class="text-neon">👨‍🏫 Profesor</h5>
+                <p class="text-light">@(string.IsNullOrEmpty(Model.NombreProfesor) ? "No especificado" : Model.NombreProfesor)</p>
+
+                <h5 class="text-neon mt-3">📊 Stats</h5>
+                <ul class="text-light list-unstyled">
+                    <li><strong>Valor:</strong> @Model.Valor pts</li>
+                    <li><strong>Dificultad:</strong> Nivel @Model.Dificultad</li>
+                </ul>
+
+                @if (!string.IsNullOrEmpty(Model.Comentario))
+                {
+                    <h5 class="text-neon mt-3">📝 Comentario rápido</h5>
+                    <p class="text-light fst-italic">"@Model.Comentario"</p>
+                }
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Instrucciones e Imagen -->
+        <div class="col-md-8">
+            <h4 class="text-light mb-3">📋 Instrucciones de la Tarea</h4>
+            
+            <div class="text-light mb-4 p-3 rounded border border-secondary" style="background: rgba(255,255,255,0.05); min-height: 100px; white-space: pre-wrap;">
+                @(string.IsNullOrEmpty(Model.Instrucciones) ? "No hay instrucciones detalladas." : Model.Instrucciones)
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ImagenUrl))
+            {
+                <h5 class="text-light mb-3"> Imagen adjunta</h5>
+                <!-- Si es una URL externa o ruta, se renderiza aquí -->
+                <img src="@Model.ImagenUrl" alt="Instrucciones de @Model.Titulo" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" />
+            }
+        </div>
+    </div>
+
+    <div class="mt-5 d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">✏️ Editar Tarea</a>
+        <a asp-action="Index" class="btn btn-secondary">⬅️ Volver al Dashboard</a>
+    </div>
+</div>

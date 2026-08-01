@@ -8,6 +8,10 @@
         public int Valor { get; set; }
         public int Dificultad { get; set; }
         public DateOnly Fecha { get; set; }
-        public String? Comentario { get; set; }
+        public string? Comentario { get; set; }
+        public string? NombreProfesor { get; set; }
+        public string? Instrucciones { get; set; }
+        public TimeOnly? HoraEntrega { get; set; }
+        public string? ImagenUrl { get; set; }
     }
 }

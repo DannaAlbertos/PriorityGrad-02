@@ -1,4 +1,7 @@
 ﻿@model PriorityGrad.domain.Models.Tarea
+@{
+    ViewData["Title"] = "Nueva Tarea";
+}
 
 <div class="glass-box">
     <h2>Nueva Tarea</h2>
@@ -24,13 +27,41 @@
             <input asp-for="Fecha" type="date" class="form-control" />
         </div>
         
-        <!-- Nuevo campo para el Tooltip -->
+        <!-- Comentario para el Tooltip / Burbuja -->
         <div class="mb-3">
-            <label class="form-label">Comentario (Opcional)</label>
-            <textarea asp-for="Comentario" class="form-control" rows="2" placeholder="Escribe el texto para la burbuja aquí..."></textarea>
+            <label class="form-label">Comentario (Opcional - Burbuja de texto)</label>
+            <textarea asp-for="Comentario" class="form-control" rows="2" placeholder="Escribe el texto rápido para la burbuja aquí..."></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Guardar Tarea</button>
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <hr class="border-secondary my-4" />
+        <h4 class="text-light mb-3">Detalles Adicionales</h4>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Nombre del Profesor</label>
+                <input asp-for="NombreProfesor" class="form-control" placeholder="Ej. Ing. Carlos" />
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Hora de Entrega</label>
+                <input asp-for="HoraEntrega" type="time" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Instrucciones Detalladas</label>
+            <textarea asp-for="Instrucciones" class="form-control" rows="4" placeholder="Pega aquí los detalles completos o rúbrica de la tarea..."></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">URL de la Imagen (Opcional)</label>
+            <input asp-for="ImagenUrl" type="url" class="form-control" placeholder="Ej. https://i.imgur.com/tu-imagen.png" />
+            <small class="text-muted">Pega un enlace de la imagen o captura de las instrucciones.</small>
+        </div>
+
+        <div class="mt-4 d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
     </form>
 </div>
