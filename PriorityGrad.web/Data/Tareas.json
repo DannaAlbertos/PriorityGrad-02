@@ -5,15 +5,8 @@
     "Materia": "Bases de datos",
     "Valor": 35,
     "Dificultad": 2,
-    "Fecha": "2026-07-08"
-  },
-  {
-    "Id": 9,
-    "Titulo": "Derivadas pt2",
-    "Materia": "C\u00E1lculo diferencial",
-    "Valor": 40,
-    "Dificultad": 5,
-    "Fecha": "2026-07-02"
+    "Fecha": "2026-08-01",
+    "Comentario": "hole chikes\r\nlol\r\nhazla bien luser"
   },
   {
     "Id": 10,
@@ -21,7 +14,8 @@
     "Materia": "C\u00E1lculo diferencial",
     "Valor": 5,
     "Dificultad": 1,
-    "Fecha": "2026-06-29"
+    "Fecha": "2026-06-29",
+    "Comentario": null
   },
   {
     "Id": 11,
@@ -29,6 +23,25 @@
     "Materia": "C\u00E1lculo diferencial",
     "Valor": 20,
     "Dificultad": 5,
-    "Fecha": "2026-07-29"
+    "Fecha": "2026-07-29",
+    "Comentario": null
+  },
+  {
+    "Id": 12,
+    "Titulo": "Derivadas pt2",
+    "Materia": "C\u00E1lculo diferencial",
+    "Valor": 109000,
+    "Dificultad": 5,
+    "Fecha": "2026-08-02",
+    "Comentario": null
+  },
+  {
+    "Id": 13,
+    "Titulo": "Derivadas pt2",
+    "Materia": "C\u00E1lculo diferencial",
+    "Valor": 109000,
+    "Dificultad": 3,
+    "Fecha": "2026-08-02",
+    "Comentario": "- Panchito es especialito"
   }
 ]
