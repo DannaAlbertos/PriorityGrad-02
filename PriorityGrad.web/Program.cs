@@ -3,6 +3,9 @@ using PriorityGrad.infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Cargar el archivo de configuración personalizado de materias
+builder.Configuration.AddJsonFile("materiasConfig.json", optional: true, reloadOnChange: true);
+
 // Registra los servicios de controladores y vistas
 builder.Services.AddControllersWithViews();
 
@@ -21,7 +24,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles(); // Importante para tus archivos CSS/JS
+
 app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

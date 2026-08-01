@@ -1,0 +1,16 @@
+{
+  "Materias": [
+    {
+      "Nombre": "Bases de datos",
+      "Color": "#4e73df"
+    },
+    {
+      "Nombre": "Cálculo diferencial",
+      "Color": "#1cc88a"
+    },
+    {
+      "Nombre": "Programación Web",
+      "Color": "#36b9cc"
+    }
+  ]
+}

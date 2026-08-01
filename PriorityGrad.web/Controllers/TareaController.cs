@@ -20,7 +20,6 @@ namespace PriorityGrad.web.Controllers
             return View(_repository.ObtenerTodas().Where(t => t.Fecha < hoy).ToList());
         }
 
-        // --- MÉTODO DETAILS AGREGADO ---
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -35,6 +34,19 @@ namespace PriorityGrad.web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Tarea nuevaTarea)
         {
+            // Sincronización automática: si ya existe otra tarea con la misma materia, heredamos su color
+            if (!string.IsNullOrEmpty(nuevaTarea.Materia))
+            {
+                var tareaExistente = _repository.ObtenerTodas()
+                    .FirstOrDefault(t => t.Materia.Equals(nuevaTarea.Materia, StringComparison.OrdinalIgnoreCase) && !string.IsNullOrEmpty(t.ColorHex));
+
+                if (tareaExistente != null)
+                {
+                    nuevaTarea.ColorHex = tareaExistente.ColorHex;
+                    nuevaTarea.ColorTexto = tareaExistente.ColorTexto;
+                }
+            }
+
             if (!ModelState.IsValid) return View(nuevaTarea);
             _repository.Guardar(nuevaTarea);
             return RedirectToAction(nameof(Index));

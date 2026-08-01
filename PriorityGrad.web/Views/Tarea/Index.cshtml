@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PriorityGrad.domain.Models.Tarea>
+
 @{ 
     ViewData["Title"] = "Mis Tareas"; 
-    // Declarar la fecha de hoy una sola vez fuera del bucle    
     var hoy = DateOnly.FromDateTime(DateTime.Now);
 }
 
@@ -50,10 +50,13 @@
                 string estado = item.Fecha > hoy ? "A tiempo" : "Para hoy";
                 string badgeColor = estado == "A tiempo" ? "success" : "warning";
                 
+                // Leemos los colores directamente de la tarea (con valores por defecto si están vacíos)
+                string bgColor = !string.IsNullOrEmpty(item.ColorHex) ? item.ColorHex : "#6c757d";
+                string txtColor = !string.IsNullOrEmpty(item.ColorTexto) ? item.ColorTexto : "#ffffff";
+                
                 <tr>
                     <td>
                         @item.Titulo
-                        <!-- Enlace interactivo con tooltip que redirige a la vista Details -->
                         @if (!string.IsNullOrEmpty(item.Comentario))
                         {
                             <a asp-action="Details" asp-route-id="@item.Id" 
@@ -66,7 +69,11 @@
                             </a>
                         }
                     </td>
-                    <td>@item.Materia</td>
+                    <td>
+                        <span class="badge" style="background-color: @bgColor !important; color: @txtColor !important; padding: 6px 10px;">
+                            @item.Materia
+                        </span>
+                    </td>
                     <td>@item.Valor</td>
                     <td>@item.Dificultad</td>
                     <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
@@ -85,7 +92,6 @@
     </table>
 </div>
 
-<!-- Script necesario para que las burbujas de Bootstrap funcionen al pasar el mouse -->
 @section Scripts {
     <script>
         document.addEventListener("DOMContentLoaded", function () {

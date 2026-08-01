@@ -10,10 +10,24 @@
             <label class="form-label">Título</label>
             <input asp-for="Titulo" class="form-control" />
         </div>
-        <div class="mb-3">
-            <label class="form-label">Materia</label>
-            <input asp-for="Materia" class="form-control" />
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Materia</label>
+                <input asp-for="Materia" class="form-control" placeholder="Ej. Bases de datos" />
+            </div>
+            
+            <div class="col-md-3 mb-3">
+                <label class="form-label">Color de Fondo</label>
+                <input asp-for="ColorHex" type="color" class="form-control form-control-color w-100" value="#d4a5a5" />
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <label class="form-label">Color de Texto</label>
+                <input asp-for="ColorTexto" type="color" class="form-control form-control-color w-100" value="#ffffff" />
+            </div>
         </div>
+
         <div class="mb-3">
             <label class="form-label">Valor</label>
             <input asp-for="Valor" class="form-control" />
@@ -27,7 +41,6 @@
             <input asp-for="Fecha" type="date" class="form-control" />
         </div>
         
-        <!-- Comentario para el Tooltip / Burbuja -->
         <div class="mb-3">
             <label class="form-label">Comentario (Opcional - Burbuja de texto)</label>
             <textarea asp-for="Comentario" class="form-control" rows="2" placeholder="Escribe el texto rápido para la burbuja aquí..."></textarea>

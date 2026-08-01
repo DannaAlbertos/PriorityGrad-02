@@ -13,5 +13,7 @@
         public string? Instrucciones { get; set; }
         public TimeOnly? HoraEntrega { get; set; }
         public string? ImagenUrl { get; set; }
+        public string? ColorHex { get; set; } = "#d4a5a5";
+        public string? ColorTexto { get; set; } = "#ffffff";
     }
 }
