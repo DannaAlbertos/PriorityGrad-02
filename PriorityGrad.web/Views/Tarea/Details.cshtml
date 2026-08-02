@@ -14,14 +14,14 @@
         <div>
             <h1 class="mb-2 text-info">@Model.Titulo</h1>
             <span class="badge fs-5 px-3 py-2 shadow-sm" style="background-color: @bgColor !important; color: @txtColor !important;">
-                📚 @Model.Materia
+                 @Model.Materia
             </span>
         </div>
         <div class="text-end">
-            <h4 class="text-warning mb-0">📅 @diaSemana, @Model.Fecha.ToString("dd/MM/yyyy")</h4>
+            <h4 class="text-warning mb-0"> @diaSemana, @Model.Fecha.ToString("dd/MM/yyyy")</h4>
             @if (Model.HoraEntrega.HasValue)
             {
-                <h5 class="text-light mt-1">⏰ Hora límite: @Model.HoraEntrega.Value.ToString("HH:mm")</h5>
+                <h5 class="text-light mt-1"> Hora límite: @Model.HoraEntrega.Value.ToString("HH:mm")</h5>
             }
         </div>
     </div>
@@ -31,10 +31,10 @@
     <div class="row">
         <div class="col-md-4">
             <div class="p-3 rounded" style="background: rgba(0,0,0,0.2);">
-                <h5 class="text-neon">👨‍🏫 Profesor</h5>
+                <h5 class="text-neon"> Profesor</h5>
                 <p class="text-light">@(string.IsNullOrEmpty(Model.NombreProfesor) ? "No especificado" : Model.NombreProfesor)</p>
 
-                <h5 class="text-neon mt-3">📊 Stats</h5>
+                <h5 class="text-neon mt-3"> Stats</h5>
                 <ul class="text-light list-unstyled">
                     <li><strong>Valor:</strong> @Model.Valor pts</li>
                     <li><strong>Dificultad:</strong> Nivel @Model.Dificultad</li>
@@ -42,28 +42,28 @@
 
                 @if (!string.IsNullOrEmpty(Model.Comentario))
                 {
-                    <h5 class="text-neon mt-3">📝 Comentario rápido</h5>
+                    <h5 class="text-neon mt-3"> Comentario rápido</h5>
                     <p class="text-light fst-italic">"@Model.Comentario"</p>
                 }
             </div>
         </div>
 
         <div class="col-md-8">
-            <h4 class="text-light mb-3">📋 Instrucciones de la Tarea</h4>
+            <h4 class="text-light mb-3"> Instrucciones de la Tarea</h4>
             <div class="text-light mb-4 p-3 rounded border border-secondary" style="background: rgba(255,255,255,0.05); min-height: 100px; white-space: pre-wrap;">
                 @(string.IsNullOrEmpty(Model.Instrucciones) ? "No hay instrucciones detalladas." : Model.Instrucciones)
             </div>
 
             @if (!string.IsNullOrEmpty(Model.ImagenUrl))
             {
-                <h5 class="text-light mb-3">🖼️ Imagen adjunta</h5>
+                <h5 class="text-light mb-3"> Imagen adjunta</h5>
                 <img src="@Model.ImagenUrl" alt="Instrucciones" class="img-fluid rounded shadow" style="max-height: 400px; object-fit: contain;" />
             }
         </div>
     </div>
 
     <div class="mt-5 d-flex gap-2">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">✏️ Editar Tarea</a>
-        <a asp-action="Index" class="btn btn-secondary">⬅️ Volver al Dashboard</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info"> Editar Tarea</a>
+        <a asp-action="Index" class="btn btn-secondary"> Volver al Dashboard</a>
     </div>
 </div>
