@@ -1,43 +1,77 @@
-﻿<!-- SECCIÓN DE EDICIÓN DE MATERIAS -->
-<div class="col-md-8 px-4">
-    <h5 class="mb-3">>_ Mis Materias Actuales</h5>
-    
-    <form asp-controller="Perfil" asp-action="ActualizarMaterias" method="post">
-        
-        <div id="contenedor-materias">
-            @if (ViewBag.MisMaterias != null && ((List<PriorityGrad.web.Models.MateriaInfo>)ViewBag.MisMaterias).Count > 0)
-            {
-                @foreach (var materia in ViewBag.MisMaterias)
-                {
-                    <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
-                        <input type="text" class="form-control bg-dark text-white" value="@materia.Nombre" name="MateriaEditada" placeholder="Nombre de materia" required>
-                        <input type="text" class="form-control bg-dark text-white" value="@materia.Profesor" name="ProfesorEditado" placeholder="Profesor">
-                        <input type="color" class="form-control form-control-color" value="@(materia.Color ?? "#0d6efd")" name="ColorEditado" title="Cambiar color">
-                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
-                    </div>
-                }
-            }
-            else
-            {
-                <!-- Fila por defecto si no hay materias -->
-                <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
-                    <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Nombre de materia" required>
-                    <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Profesor">
-                    <input type="color" class="form-control form-control-color" value="#0d6efd" name="ColorEditado" title="Cambiar color">
-                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
+﻿@model PriorityGrad.web.Models.PerfilViewModel
+<!-- Ajusta el namespace según tu modelo de perfil -->
+
+<div class="glass-box">
+    <div class="row">
+        <!-- SECCIÓN DE FOTO DE PERFIL -->
+        <div class="col-md-4 text-center border-end border-secondary">
+            <h5 class="mb-3 text-light">>_ Tu Avatar</h5>
+            
+            <div class="mb-3">
+                <img src="@(!string.IsNullOrEmpty(Model?.FotoPerfilUrl) ? Model.FotoPerfilUrl : "https://i.imgur.com/71916rK.png")" 
+                     class="rounded-circle shadow-lg mb-3" width="120" height="120" style="object-fit: cover; border: 3px solid #ff007f;" alt="Avatar de usuario" />
+            </div>
+
+            <form asp-controller="Perfil" asp-action="ActualizarFoto" method="post">
+                <div class="mb-3 text-start">
+                    <label class="form-label text-light fs-6">URL de la Foto de Perfil</label>
+                    <input type="url" name="FotoPerfilUrl" class="form-control bg-dark text-white" placeholder="Ej. https://i.imgur.com/tu-foto.png" value="@Model?.FotoPerfilUrl" required />
+                    <small class="text-muted">Pega un enlace directo de imagen. Se actualizará en todas tus pantallas al guardar.</small>
                 </div>
-            }
+                <button type="submit" class="btn btn-sm btn-outline-light w-100 mb-4">Actualizar Foto 📷</button>
+            </form>
+
+            <!-- Botón de Salir GRANDE exclusivo de la vista de sesión -->
+            <div class="d-grid mt-4">
+                <a asp-controller="Auth" asp-action="Logout" class="btn btn-danger btn-lg py-2 fw-bold shadow">
+                    🚪 Cerrar Sesión (Salir)
+                </a>
+            </div>
         </div>
 
-        <!-- Botón para agregar nueva materia dinámicamente -->
-        <div class="mb-3">
-            <button type="button" class="btn btn-outline-info btn-sm" onclick="agregarFila()">+ Agregar Materia</button>
+        <!-- SECCIÓN DE EDICIÓN DE MATERIAS -->
+        <div class="col-md-8 px-4">
+            <h5 class="mb-3">>_ Mis Materias Actuales</h5>
+            <p class="text-muted small mb-4">Administra tus materias, asigna a sus profesores correspondientes y personaliza el color que se mostrará en tus tareas.</p>
+            
+            <form asp-controller="Perfil" asp-action="ActualizarMaterias" method="post">
+                
+                <div id="contenedor-materias">
+                    @if (ViewBag.MisMaterias != null && ((List<PriorityGrad.web.Models.MateriaInfo>)ViewBag.MisMaterias).Count > 0)
+                    {
+                        @foreach (var materia in ViewBag.MisMaterias)
+                        {
+                            <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
+                                <input type="text" class="form-control bg-dark text-white" value="@materia.Nombre" name="MateriaEditada" placeholder="Ej. Matemáticas Discretas" required>
+                                <input type="text" class="form-control bg-dark text-white" value="@materia.Profesor" name="ProfesorEditado" placeholder="Ej. Dr. Roberto Gómez">
+                                <input type="color" class="form-control form-control-color" value="@(materia.Color ?? "#0d6efd")" name="ColorEditado" title="Cambiar color distintivo">
+                                <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)" title="Eliminar materia">X</button>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <!-- Fila por defecto con instrucciones visuales si no hay materias -->
+                        <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
+                            <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Ej. Arquitectura de Software" required>
+                            <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Ej. Ing. Pedrozo">
+                            <input type="color" class="form-control form-control-color" value="#0d6efd" name="ColorEditado" title="Cambiar color distintivo">
+                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)" title="Eliminar materia">X</button>
+                        </div>
+                    }
+                </div>
+
+                <!-- Botón para agregar nueva materia dinámicamente -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-outline-info btn-sm" onclick="agregarFila()">+ Agregar Materia</button>
+                </div>
+                
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-neon">Guardar Cambios [💾]</button>
+                </div>
+            </form>
         </div>
-        
-        <div class="d-flex justify-content-end mt-4">
-            <button type="submit" class="btn btn-neon">Guardar Cambios [💾]</button>
-        </div>
-    </form>
+    </div>
 </div>
 
 <!-- Script para gestionar las filas dinámicamente -->
@@ -48,10 +82,10 @@
             const nuevaFila = document.createElement('div');
             nuevaFila.className = 'materia-edit-row d-flex gap-2 mb-3 align-items-center';
             nuevaFila.innerHTML = `
-                <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Nombre de materia" required>
-                <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Profesor">
-                <input type="color" class="form-control form-control-color" value="#0d6efd" name="ColorEditado" title="Cambiar color">
-                <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
+                <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Ej. Cálculo Diferencial" required>
+                <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Ej. Profa. María López">
+                <input type="color" class="form-control form-control-color" value="#ff007f" name="ColorEditado" title="Cambiar color distintivo">
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)" title="Eliminar materia">X</button>
             `;
             contenedor.appendChild(nuevaFila);
         }

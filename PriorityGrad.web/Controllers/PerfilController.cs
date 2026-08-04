@@ -60,7 +60,37 @@ namespace PriorityGrad.web.Controllers
 
             ViewBag.MisMaterias = materiasParaVista;
 
-            return View();
+            // Creamos el modelo para la vista de perfil asegurando que pase la foto actual
+            var modelo = new PerfilViewModel
+            {
+                FotoPerfilUrl = usuario.FotoPerfil
+            };
+
+            return View(modelo);
+        }
+
+        [HttpPost("ActualizarFoto")]
+        public IActionResult ActualizarFoto(string fotoPerfilUrl)
+        {
+            var correo = HttpContext.Session.GetString("UsuarioCorreo");
+            if (string.IsNullOrEmpty(correo))
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            if (!string.IsNullOrWhiteSpace(fotoPerfilUrl))
+            {
+                var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == correo);
+                if (usuario != null)
+                {
+                    usuario.FotoPerfil = fotoPerfilUrl.Trim();
+                    _context.SaveChanges();
+                }
+
+                HttpContext.Session.SetString("UsuarioFoto", fotoPerfilUrl.Trim());
+            }
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost("SubirFoto")]

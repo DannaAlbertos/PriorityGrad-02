@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using PriorityGrad.domain.Models; // Ajusta según tu espacio de nombres de Usuario
-using PriorityGrad.infrastructure.Data; // Tu AppDbContext
+using PriorityGrad.domain.Models;
+using PriorityGrad.infrastructure.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System;
@@ -30,20 +30,18 @@ namespace PriorityGrad.web.Controllers
 
             string emailTrimmed = email.Trim();
 
-            // Buscar el usuario en PostgreSQL usando Entity Framework
             var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == emailTrimmed);
 
             if (usuario != null)
             {
-                // Cargar sesión con los datos reales de la BD
                 HttpContext.Session.SetString("UsuarioCorreo", usuario.Email);
                 HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
+                HttpContext.Session.SetString("UsuarioFoto", usuario.FotoPerfil ?? "");
 
                 return RedirectToAction("Index", "Tarea");
             }
             else
             {
-                // Si no existe, redirigir al onboarding de registro inicial
                 return RedirectToAction("CompletarRegistro", new { email, nombre });
             }
         }
@@ -66,33 +64,30 @@ namespace PriorityGrad.web.Controllers
 
             string correoTrimmed = Correo.Trim();
 
-            // Verificar si ya existe para evitar duplicados
             var usuarioExistente = _context.Usuarios.FirstOrDefault(u => u.Email == correoTrimmed);
             if (usuarioExistente != null)
             {
-                // Opcional: actualizar o redirigir directamente
                 HttpContext.Session.SetString("UsuarioCorreo", usuarioExistente.Email);
                 HttpContext.Session.SetString("UsuarioNombre", usuarioExistente.Nombre);
+                HttpContext.Session.SetString("UsuarioFoto", usuarioExistente.FotoPerfil ?? "");
                 return RedirectToAction("Index", "Tarea");
             }
 
-            // Crear el nuevo usuario para la Base de Datos
             var nuevoUsuario = new Usuario
             {
                 Email = correoTrimmed,
                 Nombre = Nombre ?? "Estudiante",
                 Institucion = Institucion ?? "",
                 CarreraGrado = Carrera ?? "",
-                FotoPerfil = "/uploads/default.png" // O tu ruta por defecto
+                FotoPerfil = "https://i.imgur.com/71916rK.png"
             };
 
-            // Guardar el usuario en PostgreSQL
             _context.Usuarios.Add(nuevoUsuario);
-            _context.SaveChanges(); // ¡Esto lo escribe permanentemente en la BD!
+            _context.SaveChanges();
 
-            // Establecer sesión activa
             HttpContext.Session.SetString("UsuarioCorreo", nuevoUsuario.Email);
             HttpContext.Session.SetString("UsuarioNombre", nuevoUsuario.Nombre);
+            HttpContext.Session.SetString("UsuarioFoto", nuevoUsuario.FotoPerfil);
 
             return RedirectToAction("Index", "Tarea");
         }
