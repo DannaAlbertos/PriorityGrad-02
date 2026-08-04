@@ -1,21 +1,30 @@
+using Microsoft.EntityFrameworkCore;
 using PriorityGrad.domain.Interfaces;
+using PriorityGrad.infrastructure;
+using PriorityGrad.infrastructure.Data;
 using PriorityGrad.infrastructure.Repositories;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Cargar el archivo de configuración personalizado de materias
 builder.Configuration.AddJsonFile("materiasConfig.json", optional: true, reloadOnChange: true);
 
-// Registra los servicios de controladores y vistas
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddControllersWithViews();
 
-// CONFIGURACIÓN CLAVE (Inyección de dependencias)
-// Conecta la Interfaz (Domain) con la Clase concreta (Infrastructure)
-builder.Services.AddScoped<ITareaRepository, JsonRepository>();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddScoped<ITareaRepository, TareaRepository>();
 
 var app = builder.Build();
 
-// Pipeline de configuración
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -23,14 +32,17 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // Importante para tus archivos CSS/JS
+app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseSession();
+
+// Ruta por defecto configurada para arrancar directamente en el Login de Auth
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Auth}/{action=Login}/{id?}");
 
 app.Run();

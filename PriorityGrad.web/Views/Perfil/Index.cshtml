@@ -1,0 +1,70 @@
+﻿<!-- SECCIÓN DE EDICIÓN DE MATERIAS -->
+<div class="col-md-8 px-4">
+    <h5 class="mb-3">>_ Mis Materias Actuales</h5>
+    
+    <form asp-controller="Perfil" asp-action="ActualizarMaterias" method="post">
+        
+        <div id="contenedor-materias">
+            @if (ViewBag.MisMaterias != null && ((List<PriorityGrad.web.Models.MateriaInfo>)ViewBag.MisMaterias).Count > 0)
+            {
+                @foreach (var materia in ViewBag.MisMaterias)
+                {
+                    <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
+                        <input type="text" class="form-control bg-dark text-white" value="@materia.Nombre" name="MateriaEditada" placeholder="Nombre de materia" required>
+                        <input type="text" class="form-control bg-dark text-white" value="@materia.Profesor" name="ProfesorEditado" placeholder="Profesor">
+                        <input type="color" class="form-control form-control-color" value="@(materia.Color ?? "#0d6efd")" name="ColorEditado" title="Cambiar color">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
+                    </div>
+                }
+            }
+            else
+            {
+                <!-- Fila por defecto si no hay materias -->
+                <div class="materia-edit-row d-flex gap-2 mb-3 align-items-center">
+                    <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Nombre de materia" required>
+                    <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Profesor">
+                    <input type="color" class="form-control form-control-color" value="#0d6efd" name="ColorEditado" title="Cambiar color">
+                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
+                </div>
+            }
+        </div>
+
+        <!-- Botón para agregar nueva materia dinámicamente -->
+        <div class="mb-3">
+            <button type="button" class="btn btn-outline-info btn-sm" onclick="agregarFila()">+ Agregar Materia</button>
+        </div>
+        
+        <div class="d-flex justify-content-end mt-4">
+            <button type="submit" class="btn btn-neon">Guardar Cambios [💾]</button>
+        </div>
+    </form>
+</div>
+
+<!-- Script para gestionar las filas dinámicamente -->
+@section Scripts {
+    <script>
+        function agregarFila() {
+            const contenedor = document.getElementById('contenedor-materias');
+            const nuevaFila = document.createElement('div');
+            nuevaFila.className = 'materia-edit-row d-flex gap-2 mb-3 align-items-center';
+            nuevaFila.innerHTML = `
+                <input type="text" class="form-control bg-dark text-white" name="MateriaEditada" placeholder="Nombre de materia" required>
+                <input type="text" class="form-control bg-dark text-white" name="ProfesorEditado" placeholder="Profesor">
+                <input type="color" class="form-control form-control-color" value="#0d6efd" name="ColorEditado" title="Cambiar color">
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">X</button>
+            `;
+            contenedor.appendChild(nuevaFila);
+        }
+
+        function eliminarFila(button) {
+            const fila = button.closest('.materia-edit-row');
+            const contenedor = document.getElementById('contenedor-materias');
+            // Evitar borrar todas las filas para que siempre quede al menos una
+            if (contenedor.children.length > 1) {
+                fila.remove();
+            } else {
+                alert("Debes tener al menos una materia registrada.");
+            }
+        }
+    </script>
+}

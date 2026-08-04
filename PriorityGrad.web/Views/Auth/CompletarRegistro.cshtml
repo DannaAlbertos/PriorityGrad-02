@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Completar Registro";
+}
+
+<div class="glass-box mx-auto my-5" style="max-width: 800px;">
+    <div class="text-center mb-4">
+        <h2>(^_^) ¡Casi listos!</h2>
+        <p class="text-muted">Personaliza tu perfil y agrega tus materias iniciales.</p>
+    </div>
+
+    <form asp-controller="Auth" asp-action="GuardarRegistro" method="post">
+        
+        <!-- Recibimos los datos básicos ocultos -->
+        <input type="hidden" name="Correo" value="@Context.Request.Query["email"]" />
+        <input type="hidden" name="Nombre" value="@Context.Request.Query["nombre"]" />
+
+        <!-- DATOS DEL ESTUDIANTE -->
+        <h5 class="mb-3 text-info">>_ Datos del Estudiante</h5>
+        
+        <div class="form-group mb-3">
+            <label for="Institucion" class="form-label">Institución Educativa:</label>
+            <input type="text" class="form-control bg-dark text-white border-secondary" id="Institucion" name="Institucion" required placeholder="Ej. UNAM, IPN, Tec..." />
+        </div>
+        <div class="form-group mb-4">
+            <label for="Carrera" class="form-label">Carrera o Grado:</label>
+            <input type="text" class="form-control bg-dark text-white border-secondary" id="Carrera" name="Carrera" required placeholder="Ej. Ingeniería en Sistemas" />
+        </div>
+
+        <hr class="my-4 border-secondary" />
+
+        <!-- SECCIÓN DE MATERIAS DINÁMICAS -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="text-info m-0">>_ Tus Materias</h5>
+            <button type="button" class="btn btn-sm btn-outline-info" onclick="agregarMateria()">+ Agregar Materia</button>
+        </div>
+
+        <div id="contenedor-materias">
+            <!-- Materia 1 (Base) -->
+            <div class="materia-item p-3 mb-3" style="background: rgba(255,255,255,0.03); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                <h6 class="text-info mb-3">Materia 1</h6>
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        <label class="form-label">Nombre:</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" name="NombresMaterias" required placeholder="Ej. Bases de datos" />
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                        <label class="form-label">Profesor:</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" name="Profesores" required placeholder="Ej. Ing. Juan" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label class="form-label">Color de Identificación:</label>
+                        <input type="color" class="form-control form-control-color w-100 bg-dark border-secondary" name="Colores" value="#ff007f" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÓN DE FINALIZAR Y GUARDAR -->
+        <div class="text-center mt-5">
+            <button type="submit" class="btn-neon w-100 py-3 fs-5">Finalizar y Guardar Todo [🎓]</button>
+        </div>
+
+    </form>
+</div>
+
+<!-- SCRIPT PARA CLONAR MATERIAS DINÁMICAMENTE -->
+<script>
+    let contadorMaterias = 1;
+    function agregarMateria() {
+        contadorMaterias++;
+        const contenedor = document.getElementById('contenedor-materias');
+        
+        const htmlNuevaMateria = `
+            <div class="materia-item p-3 mb-3" style="background: rgba(255,255,255,0.03); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6 class="text-info m-0">Materia ${contadorMaterias}</h6>
+                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.parentElement.parentElement.remove()">X Eliminar</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        <label class="form-label">Nombre:</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" name="NombresMaterias" required placeholder="Ej. Cálculo" />
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                        <label class="form-label">Profesor:</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" name="Profesores" required placeholder="Ej. Dra. María" />
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label class="form-label">Color de Identificación:</label>
+                        <input type="color" class="form-control form-control-color w-100 bg-dark border-secondary" name="Colores" value="#6a11cb" />
+                    </div>
+                </div>
+            </div>`;
+        
+        contenedor.insertAdjacentHTML('beforeend', htmlNuevaMateria);
+    }
+</script>

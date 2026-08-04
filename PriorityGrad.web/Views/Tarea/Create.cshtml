@@ -1,80 +1,119 @@
 ﻿@model PriorityGrad.domain.Models.Tarea
+
 @{
     ViewData["Title"] = "Nueva Tarea";
+    var materiasList = ViewBag.MateriasDisponibles as List<PriorityGrad.web.Models.MateriaInfo> ?? new List<PriorityGrad.web.Models.MateriaInfo>();
 }
 
-<div class="glass-box">
-    <h2>Nueva Tarea</h2>
-    <form asp-action="Create" method="post">
+<div class="glass-box p-5">
+    <h2 class="text-info mb-4">>_ Nueva Tarea</h2>
+    
+    <form asp-action="Create" method="post" id="tareaForm">
         <div class="mb-3">
             <label class="form-label">Título</label>
-            <input asp-for="Titulo" class="form-control" />
+            <input asp-for="Titulo" class="form-control bg-dark text-white border-secondary" required />
         </div>
 
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label class="form-label">Materia</label>
-                <input asp-for="Materia" class="form-control" placeholder="Ej. Bases de datos" />
+                <!-- Input conectado al datalist para listar o escribir -->
+                <input asp-for="Materia" id="materiaInput" class="form-control bg-dark text-white border-secondary" list="listaMaterias" placeholder="Selecciona o escribe una materia..." autocomplete="off" required />
+                <datalist id="listaMaterias">
+                    @foreach (var mat in materiasList)
+                    {
+                        <option value="@mat.Nombre" data-color="@mat.Color" data-profesor="@mat.Profesor"></option>
+                    }
+                </datalist>
             </div>
             
             <div class="col-md-3 mb-3">
                 <label class="form-label">Color de Fondo</label>
-                <input asp-for="ColorHex" type="color" class="form-control form-control-color w-100" value="#d4a5a5" />
+                <input asp-for="ColorHex" id="colorHexInput" type="color" class="form-control form-control-color w-100 bg-dark border-secondary" value="#ff007f" />
             </div>
 
             <div class="col-md-3 mb-3">
                 <label class="form-label">Color de Texto</label>
-                <input asp-for="ColorTexto" type="color" class="form-control form-control-color w-100" value="#ffffff" />
+                <input asp-for="ColorTexto" id="colorTextoInput" type="color" class="form-control form-control-color w-100 bg-dark border-secondary" value="#ffffff" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Valor (Puntuación)</label>
+                <input asp-for="Valor" class="form-control bg-dark text-white border-secondary" type="number" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Dificultad (1 al 5)</label>
+                <input asp-for="Dificultad" class="form-control bg-dark text-white border-secondary" type="number" min="1" max="5" />
             </div>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Valor</label>
-            <input asp-for="Valor" class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Dificultad</label>
-            <input asp-for="Dificultad" class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Fecha</label>
-            <input asp-for="Fecha" type="date" class="form-control" />
+            <label class="form-label">Fecha de Entrega</label>
+            <input asp-for="Fecha" type="date" class="form-control bg-dark text-white border-secondary" required />
         </div>
         
         <div class="mb-3">
             <label class="form-label">Comentario (Opcional - Burbuja de texto)</label>
-            <textarea asp-for="Comentario" class="form-control" rows="2" placeholder="Escribe el texto rápido para la burbuja aquí..."></textarea>
+            <textarea asp-for="Comentario" class="form-control bg-dark text-white border-secondary" rows="2" placeholder="Escribe el texto rápido para la burbuja aquí..."></textarea>
         </div>
 
         <hr class="border-secondary my-4" />
-        <h4 class="text-light mb-3">Detalles Adicionales</h4>
+        <h4 class="text-light mb-3">>_ Detalles Adicionales</h4>
 
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label class="form-label">Nombre del Profesor</label>
-                <input asp-for="NombreProfesor" class="form-control" placeholder="Ej. Ing. Carlos" />
+                <input asp-for="NombreProfesor" id="nombreProfesorInput" class="form-control bg-dark text-white border-secondary" placeholder="Ej. Ing. Carlos" />
             </div>
             
             <div class="col-md-6 mb-3">
                 <label class="form-label">Hora de Entrega</label>
-                <input asp-for="HoraEntrega" type="time" class="form-control" />
+                <input asp-for="HoraEntrega" type="time" class="form-control bg-dark text-white border-secondary" />
             </div>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Instrucciones Detalladas</label>
-            <textarea asp-for="Instrucciones" class="form-control" rows="4" placeholder="Pega aquí los detalles completos o rúbrica de la tarea..."></textarea>
+            <textarea asp-for="Instrucciones" class="form-control bg-dark text-white border-secondary" rows="4" placeholder="Pega aquí los detalles completos o rúbrica de la tarea..."></textarea>
         </div>
 
         <div class="mb-3">
             <label class="form-label">URL de la Imagen (Opcional)</label>
-            <input asp-for="ImagenUrl" type="url" class="form-control" placeholder="Ej. https://i.imgur.com/tu-imagen.png" />
+            <input asp-for="ImagenUrl" type="url" class="form-control bg-dark text-white border-secondary" placeholder="Ej. https://i.imgur.com/tu-imagen.png" />
             <small class="text-muted">Pega un enlace de la imagen o captura de las instrucciones.</small>
         </div>
 
         <div class="mt-4 d-flex gap-2">
-            <button type="submit" class="btn btn-primary">Guardar Tarea</button>
+            <button type="submit" class="btn btn-neon">Guardar Tarea</button>
             <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>
 </div>
+
+@section Scripts {
+    <script>
+        // Mapeo seguro de las materias desde C# a JavaScript
+        const materiasData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(materiasList));
+
+        const materiaInput = document.getElementById('materiaInput');
+        const colorHexInput = document.getElementById('colorHexInput');
+        const nombreProfesorInput = document.getElementById('nombreProfesorInput');
+
+        // Evento que detecta cuando escribes o seleccionas una materia del datalist
+        materiaInput.addEventListener('input', function() {
+            const valorActual = this.value.trim();
+            const materiaEncontrada = materiasData.find(m => m.Nombre.toLowerCase() === valorActual.toLowerCase());
+
+            if (materiaEncontrada) {
+                if (materiaEncontrada.Color) {
+                    colorHexInput.value = materiaEncontrada.Color;
+                }
+                if (materiaEncontrada.Profesor) {
+                    nombreProfesorInput.value = materiaEncontrada.Profesor;
+                }
+            }
+        });
+    </script>
+}
