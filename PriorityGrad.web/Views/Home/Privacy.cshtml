@@ -2,39 +2,38 @@
     ViewData["Title"] = "Privacidad Real";
 }
 
-<div class="glass-box my-5">
-    <h1 class="text-glow display-5">@ViewData["Title"]</h1>
-    <p class="lead text-light">Transparencia total para tu tranquilidad académica.</p>
-    
-    <hr class="my-4 border-light">
+<div class="glass-box mx-auto my-5" style="max-width: 900px;">
+    <div class="mb-4">
+        <h2 class="text-neon fw-bold" style="color: #ff007f;">PRIVACIDAD REAL</h2>
+        <p class="text-light opacity-75">Transparencia total para tu tranquilidad académica.</p>
+    </div>
 
-    <div class="row">
-        <div class="col-lg-8">
-            <h4 class="text-white">¿Cómo manejamos tu información?</h4>
-            <p class="text-secondary">Aquí no hay trucos. Toda la data de tus tareas vive exclusivamente en tu computadora dentro de un archivo <code>tareas.json</code>. No enviamos tu información a ninguna nube, así que lo que pasa en tu PriorityGrad, se queda en tu equipo.</p>
+    <hr class="border-secondary mb-4" />
 
-            <h4 class="text-white mt-4">Tú tienes el control</h4>
-            <p class="text-secondary">Al ser una aplicación que corre localmente, tú eres el dueño absoluto. Si borras la carpeta de tu proyecto o el archivo JSON, la información desaparece para siempre. Sin rastreo, sin publicidad, sin terceros.</p>
+    <div class="row align-items-center">
+        <div class="col-md-7">
+            <h5 class="text-info mb-3">¿Cómo manejamos tu información?</h5>
+            <p class="text-light opacity-75" style="line-height: 1.6;">
+                Aquí no hay trucos. Toda la data de tus tareas, materias y perfil se almacena de forma segura en una <strong>base de datos dedicada en PostgreSQL</strong> vinculada exclusivamente a tu cuenta de correo. No compartimos tu información con terceros.
+            </p>
+
+            <h5 class="text-info mb-3 mt-4">Tú tienes el control</h5>
+            <p class="text-light opacity-75" style="line-height: 1.6;">
+                Tus datos te pertenecen por completo. Al iniciar sesión con tu cuenta, accedes únicamente a tu información académica personalizada. Sin rastreo, sin publicidad y con total seguridad.
+            </p>
         </div>
-        
-        <div class="col-lg-4">
-            <div class="p-4 text-center" style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; border-radius: 15px;">
-                <h5 class="fw-bold">Regla de Oro:</h5>
-                <p>Tu privacidad es sagrada. PriorityGrad está hecho para ayudarte a brillar, no para vigilarte.</p>
+
+        <div class="col-md-5">
+            <div class="p-4 rounded-4 shadow-lg text-white" style="background: linear-gradient(135deg, #6a11cb 0%, #ff007f 100%); border: 1px solid rgba(255,255,255,0.2);">
+                <h5 class="fw-bold mb-3">Regla de Oro:</h5>
+                <p class="mb-0" style="font-size: 0.95rem; line-height: 1.5;">
+                    Tu privacidad es sagrada. PriorityGrad está hecho para ayudarte a brillar, no para vigilarte.
+                </p>
             </div>
         </div>
     </div>
-</div>
 
-<div class="text-center mt-4">
-    <a asp-controller="Tarea" asp-action="Index" class="btn btn-outline-light btn-lg rounded-pill">Volver a Tareas</a>
+    <div class="text-center mt-5">
+        <a href="/Tarea" class="btn btn-neon px-4 py-2">Volver a Tareas </a>
+    </div>
 </div>
-
-<style>
-    .text-glow {
-        color: #ff007f; /* Combinado con el tono neón */
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-</style>

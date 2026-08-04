@@ -4,8 +4,8 @@
 
 <div class="glass-box mx-auto my-5" style="max-width: 800px;">
     <div class="text-center mb-4">
-        <h2>(^_^) ¡Casi listos!</h2>
-        <p class="text-muted">Personaliza tu perfil y agrega tus materias iniciales.</p>
+        <h2> ¡Casi listos!</h2>
+        <p class="text-muted">Personaliza tu perfil, agrega tu avatar y configura tus materias iniciales.</p>
     </div>
 
     <form asp-controller="Auth" asp-action="GuardarRegistro" method="post">
@@ -14,23 +14,30 @@
         <input type="hidden" name="Correo" value="@Context.Request.Query["email"]" />
         <input type="hidden" name="Nombre" value="@Context.Request.Query["nombre"]" />
 
-        <!-- DATOS DEL ESTUDIANTE -->
+        <!-- DATOS DEL ESTUDIANTE Y AVATAR -->
         <h5 class="mb-3 text-info">>_ Datos del Estudiante</h5>
         
         <div class="form-group mb-3">
             <label for="Institucion" class="form-label">Institución Educativa:</label>
             <input type="text" class="form-control bg-dark text-white border-secondary" id="Institucion" name="Institucion" required placeholder="Ej. UNAM, IPN, Tec..." />
         </div>
-        <div class="form-group mb-4">
+        
+        <div class="form-group mb-3">
             <label for="Carrera" class="form-label">Carrera o Grado:</label>
             <input type="text" class="form-control bg-dark text-white border-secondary" id="Carrera" name="Carrera" required placeholder="Ej. Ingeniería en Sistemas" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="FotoPerfilUrl" class="form-label">URL de la Foto de Perfil (Opcional):</label>
+            <input type="url" class="form-control bg-dark text-white border-secondary" id="FotoPerfilUrl" name="FotoPerfilUrl" placeholder="Ej. https://i.imgur.com/tu-foto.png" />
+            <small class="text-muted">Si lo dejas en blanco, se asignará un avatar por defecto.</small>
         </div>
 
         <hr class="my-4 border-secondary" />
 
         <!-- SECCIÓN DE MATERIAS DINÁMICAS -->
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="text-info m-0">>_ Tus Materias</h5>
+            <h5 class="text-info m-0"> Tus Materias</h5>
             <button type="button" class="btn btn-sm btn-outline-info" onclick="agregarMateria()">+ Agregar Materia</button>
         </div>
 

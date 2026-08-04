@@ -5,6 +5,7 @@ using PriorityGrad.infrastructure.Data;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace PriorityGrad.web.Controllers
 {
@@ -55,7 +56,7 @@ namespace PriorityGrad.web.Controllers
         }
 
         [HttpPost]
-        public IActionResult GuardarRegistro(string Correo, string Nombre, string Institucion, string Carrera, List<string> NombresMaterias, List<string> Profesores, List<string> Colores)
+        public IActionResult GuardarRegistro(string Correo, string Nombre, string Institucion, string Carrera, string FotoPerfilUrl, List<string> NombresMaterias, List<string> Profesores, List<string> Colores)
         {
             if (string.IsNullOrWhiteSpace(Correo))
             {
@@ -64,7 +65,10 @@ namespace PriorityGrad.web.Controllers
 
             string correoTrimmed = Correo.Trim();
 
-            var usuarioExistente = _context.Usuarios.FirstOrDefault(u => u.Email == correoTrimmed);
+            var usuarioExistente = _context.Usuarios
+                                  .Include(u => u.Materias)
+                                  .FirstOrDefault(u => u.Email == correoTrimmed);
+
             if (usuarioExistente != null)
             {
                 HttpContext.Session.SetString("UsuarioCorreo", usuarioExistente.Email);
@@ -73,18 +77,39 @@ namespace PriorityGrad.web.Controllers
                 return RedirectToAction("Index", "Tarea");
             }
 
+            // Crear el nuevo usuario incluyendo la foto personalizada y lista de materias
             var nuevoUsuario = new Usuario
             {
                 Email = correoTrimmed,
                 Nombre = Nombre ?? "Estudiante",
                 Institucion = Institucion ?? "",
                 CarreraGrado = Carrera ?? "",
-                FotoPerfil = "https://i.imgur.com/71916rK.png"
+                FotoPerfil = !string.IsNullOrWhiteSpace(FotoPerfilUrl) ? FotoPerfilUrl.Trim() : "https://i.imgur.com/71916rK.png",
+                Materias = new List<MateriaConfig>()
             };
+
+            // Registrar correctamente las materias dinámicas enviadas desde el formulario
+            if (NombresMaterias != null)
+            {
+                for (int i = 0; i < NombresMaterias.Count; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(NombresMaterias[i]))
+                    {
+                        nuevoUsuario.Materias.Add(new MateriaConfig
+                        {
+                            Nombre = NombresMaterias[i],
+                            NombreProfesor = Profesores != null && Profesores.Count > i ? (Profesores[i] ?? string.Empty) : string.Empty,
+                            ColorHex = Colores != null && Colores.Count > i && !string.IsNullOrEmpty(Colores[i]) ? Colores[i] : "#0d6efd",
+                            ColorTexto = "#ffffff"
+                        });
+                    }
+                }
+            }
 
             _context.Usuarios.Add(nuevoUsuario);
             _context.SaveChanges();
 
+            // Establecer sesión activa
             HttpContext.Session.SetString("UsuarioCorreo", nuevoUsuario.Email);
             HttpContext.Session.SetString("UsuarioNombre", nuevoUsuario.Nombre);
             HttpContext.Session.SetString("UsuarioFoto", nuevoUsuario.FotoPerfil);
